@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,16 +27,47 @@
       <video autoplay loop class="background">
         <source src="BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
       </video>
-      <div class="container"></div>
+        <div class="container_formulario">
+          <div class="formulario1">
+              <div class="caixa">
+                <h1>Cadastre-se</h1>
+                <div class="campo">
+                  <label for="nome">Nome:</label>
+                  <input type="text" id="in_nome"/>
+                </div>
+              
+                <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="text" placeholder="E-mail@gmail.com" id="in_email" />
+              </div>
+              <div class="campo">
+                <label for="Senha">Senha:</label>
+                <input type="password" placeholder="*******" id="in_senha" />
+              </div>
+              <div class="campo">
+                <label for="Confirmação senha"> Confirmação de Senha: </label>
+                <input type="password" placeholder="********" id="in_senha" />
+              </div>
+              <div id="exibir"></div>
+              <button onclick="entrar()">Entrar</button>
+            </div>
+            <div class="imagem_formulario">
+              <div class="campo">
+                <img src="./Img/7569759.jpg" alt="3 Carpas na água" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="footer">
       <ul>
-        <li>Endereço</li>
-        <li>Contato</li>
+        <li><a>Endereço</a></li>
+        <li><a>Contato</a></li>
       </ul>
       <p>
         Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
-        Desenvolvido por uma fanática por Biologia Marinha
+        Desenvolvido por uma fanática em Biologia Marinha 🦀! 
       </p>
     </div>
   </body>
