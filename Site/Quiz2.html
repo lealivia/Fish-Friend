@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Quiz.CSS" />
+    <title>Fish Friend</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="./Img/carp-fish.png" alt="Logo do Fish Friend" />
+        </div>
+        <div class="navbar">
+          <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Quiz1.html">Quiz</a></li>
+            <li><a href="Cadastro.html">Cadastro</a></li>
+            <li><a href="Login.HTML">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="banner">
+      <video autoplay loop class="background">
+        <source src="BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
+      </video>
+      <div class="explicar">
+        <div id="div_exibir"></div>
+      </div>
+      <div class="container">
+        <div class="caixas">
+          <div class="caixa">
+            <img
+              src="./Quiz/Peixe - boca aberta.jpg"
+              alt="imagem peixe com a boca aberta"
+            />
+            <h2>Os peixes respiram pela boca??</h2>
+            <div class="resposta">
+              <select name="Questão 2" id="sel_Q2" onchange="resposta2()">
+                <option value="">--Selecione--</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+              </select>
+              <div id="div_resposta"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <ul>
+        <li>Endereço</li>
+        <li>Contato</li>
+      </ul>
+      <p>
+        Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
+        Desenvolvido por uma fanática em Biologia Marinha 🦀!
+      </p>
+    </div>
+  </body>
+</html>
+<script>
+
+     function resposta2(){
+      
+      var resposta2 = sel_Q2.value;
+      var exibir;
+      var mensagem;
+      
+      if (resposta2 == "") {
+        mensagem = ``;
+      }
+
+    if (resposta2 == 1) {
+      mensagem = `<span style="color: green" font-size="20px"> Correto! </span>`;
+     
+    } else if (resposta2 == 2){
+      mensagem =`<span style="color: red" font-size="20px"><b>Incorreto!</b></span> <br>`;
+    }
+
+    exibir = `A água entra pela boca do peixe e vai até às guelras. Aí, o sangue recebe oxigênio.<br> Depois, expulsa dióxido de carbono pelos opérculos, que são na realidade os buracos que se encontram em cada lado da cabeça do peixe.`;
+
+    div_resposta.innerHTML = mensagem;
+
+    div_exibir.innerHTML = exibir;
+  }
+  
+</script>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="Style.CSS" />
+  <link rel="shortcut icon" href="./Img/carp-fish.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fish Friend</title>
   </head>
@@ -16,8 +17,7 @@
         <div class="navbar">
           <ul>
             <li><a href="Index.html"> Home </a></li>
-            <li><a> Quiz </a></li>
-            <li><a href="Cadastro.html"> Cadastro</a></li>
+            <li><a href="Cadastro.html"> Quiz </a></li>
             <li><a href="Login.HTML"> Login </a></li>
           </ul>
         </div>
@@ -46,7 +46,7 @@
               </div>
               <div class="campo">
                 <label for="Confirmação senha"> Confirmação de Senha: </label>
-                <input type="password" placeholder="********" id="in_senha" />
+                <input type="password" placeholder="********" id="in_confirmacao" />
               </div>
               <div id="exibir"></div>
               <button onclick="entrar()">Entrar</button>
@@ -72,3 +72,18 @@
     </div>
   </body>
 </html>
+<script>
+   function entrar(){
+    var email = in_email.value
+    var senha = in_senha.value
+    var confirmaçao = in_confirmacao.value
+
+    if(email==""|| senha ==""|| confirmaçao ==""){
+      alert("Erro! Preencha todos os campos")
+    }else {
+      setTimeout(() => {
+                    window.location = "login.html";
+                }, "1000")
+    }
+  }
+</script>

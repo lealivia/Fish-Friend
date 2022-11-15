@@ -16,8 +16,7 @@
         <div class="navbar">
           <ul>
             <li><a href="Index.html"> Home </a></li>
-            <li><a> Quiz </a></li>
-            <li><a href="Cadastro.html"> Cadastro</a></li>
+            <li><a href="Quiz1.html"> Quiz </a></li>
             <li><a href="Login.HTML"> Login </a></li>
           </ul>
         </div>
@@ -33,11 +32,11 @@
               <h1>Bem vindo ao Fish Friend</h1>
             <div class="campo">
               <label for="email">E-mail:</label>
-              <input type="text" placeholder="E-mail@gmail.com" />
+              <input type="text" placeholder="E-mail@gmail.com" id="in_email" />
             </div>
             <div class="campo">
               <label for="Senha">Senha:</label>
-              <input type="password" placeholder="*******" />
+              <input type="password" placeholder="*******" id="in_senha" />
             </div>
             <div id="exibir"></div>
             <button onclick="entrar()">Entrar</button>
@@ -62,3 +61,17 @@
     </div>
   </body>
 </html>
+<script>
+  function entrar(){
+    var email = in_email.value
+    var senha = in_senha.value
+
+    if(email== "" || senha == ""){
+    alert("Preencha todos os campos!")
+    }else {
+      setTimeout(() => {
+                 window.location = "Quiz1.html";
+      }, "1000");
+    }
+  }
+</script>

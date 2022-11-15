@@ -16,8 +16,7 @@
         <div class="navbar">
           <ul>
             <li><a href="Index.html">Home</a></li>
-            <li><a>Quiz</a></li>
-            <li><a href="Cadastro.html">Cadastro</a></li>
+            <li><a href="Cadastro.html">Quiz</a></li>
             <li><a href="Login.HTML">Login</a></li>
           </ul>
         </div>
@@ -29,9 +28,24 @@
             src="BackGround/Embaixo Da Agua - 26830.mp4"
             type="video/mp4" />
         </video>
+        <div class="container-caixa">
         <div class="container">
-          
+          <h2>Conheça o Fish Friend!</h2><br><br>
+          <p>Uma plataforma destinada aqueles que gostam da vida aquática e querem testar seu conhecimento sobre.<br><br>
+           <u><a href="./Cadastro.html"> Para isso temos aqui o Fish Quiz!</a></u><br><br>
+           Onde você se diverte enquanto aprende informações valiosas sobre nossos amigos marinhos. <br></p>
         </div>
+        <div class="container">
+          <div class="titulo">
+          <h2>Sorteie qual animal marinho você é!</h2>
+        </div>
+          <div class="caixa">
+            <div id="div_sorteio"></div>
+            <button onclick="sorteio()">Sorteie aqui!</button>
+          </div>
+        </div>
+</div>
+        
     </div>
     <div class="footer">
         <ul>
@@ -43,5 +57,83 @@
           Desenvolvido por uma fanática em Biologia Marinha 🦀! 
         </p>
       </div>
+
   </body>
 </html>
+
+<script>
+  function sorteio(){
+    var sorte = parseInt(1+Math.random()*17)
+
+    if(sorte== 1){
+      div_sorteio.innerHTML=`<img src="./Quiz/caranguejo.jpg" width="400px">`
+
+      div_sorteio.innerHTML+=`CARANGUEJO`
+    }else if(sorte == 2){
+      div_sorteio.innerHTML=`<img src="./Quiz/Orca.jpg" width="300px">`
+
+      div_sorteio.innerHTML+=`ORCA`
+    }else if(sorte == 3){
+      div_sorteio.innerHTML=`<img src="./Quiz/Tubarão Martelo.jpg" width="400px">`
+
+      div_sorteio.innerHTML+=`TUBARÃO MARTELO`
+    }else if(sorte == 4){
+      div_sorteio.innerHTML=`<img src="./Quiz/agua_viva.jpg" width="260px">`
+
+      div_sorteio.innerHTML+=`ÁGUA VIVA`
+    }else if(sorte == 5){
+      div_sorteio.innerHTML=`<img src="./Quiz/Axolote.jpg" width="300px">`
+
+      div_sorteio.innerHTML+=`AXOLOTE`
+    }else if(sorte == 6){
+      div_sorteio.innerHTML=`<img src="./Quiz/Baiacu.jpg" width="300px">`
+
+      div_sorteio.innerHTML+=`BAIACU`
+    }else if(sorte == 7){
+      div_sorteio.innerHTML=`<img src="./Quiz/Baleia jubarte.jpg" width="400px">`
+
+      div_sorteio.innerHTML+=`BALEIA JUBARTE`
+    }else if(sorte == 8){
+      div_sorteio.innerHTML=`<img src="./Quiz/Beluga.jpg" width="500px">`
+
+      div_sorteio.innerHTML+=`BELUGA`
+    }else if(sorte == 9){
+      div_sorteio.innerHTML=`<img src="./Quiz/foca.jpg" width="320px">`
+
+      div_sorteio.innerHTML+=`FOCA`
+    }else if(sorte == 10){
+      div_sorteio.innerHTML=`<img src="./Quiz/Golfinho.jpg" width="300px">`
+
+      div_sorteio.innerHTML+=`GOLFINHO`
+    }else if(sorte == 11){
+      div_sorteio.innerHTML=`<img src="./Quiz/Moreia.jpg" width="300px">`
+
+      div_sorteio.innerHTML+=`MOREIA`
+    }else if(sorte == 12){
+      div_sorteio.innerHTML=`<img src="./Quiz/Peixe - palhaço.jpg" width="200px">`
+
+      div_sorteio.innerHTML+=`PEIXE PALHAÇO`
+    }else if(sorte == 13){
+      div_sorteio.innerHTML=`<img src="./Quiz/Polvo.jpg" width="300px">`
+
+      div_sorteio.innerHTML+=`POLVO`
+    }else if(sorte == 14){
+      div_sorteio.innerHTML=`<img src="./Quiz/Raia.jpg" width="320px">`
+
+      div_sorteio.innerHTML+=`RAIA`
+    }else if(sorte == 15){
+      div_sorteio.innerHTML=`<img src="./Quiz/Sharks.jpg" width="320px">`
+
+      div_sorteio.innerHTML+=`TUBARÃO BRANCO`
+    }else if(sorte == 16){
+      div_sorteio.innerHTML=`<img src="./Quiz/Tartaruga.jpg" width="300px">`
+
+      div_sorteio.innerHTML+=`TARTARUGA`
+    }else{
+      div_sorteio.innerHTML=`<img src="./Quiz/Tubarão Baleia.jpg" width="500px">`
+
+      div_sorteio.innerHTML+=`TUBARÃO BALEIA`
+    }
+  }
+
+</script>
