@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/Quiz.CSS" />
+    <title>Fish Friend</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="./assets/carp-fish.png" alt="Logo do Fish Friend" />
+        </div>
+        <div class="navbar">
+          <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Sobre.html">Sobre a Desenvolvedora</a></li>
+            <li><a href="Quiz1.html">Quiz</a></li>
+            <li><a href="Cadastro.html">Cadastro</a></li>
+            <li><a href="Login.HTML">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="banner">
+      <video autoplay loop class="background">
+        <source src="./Assets/BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
+      </video>
+      <div class="explicar" id="explicar">
+        <div id="div_exibir"></div>
+      </div>
+      <div class="container">
+        <div class="caixas">
+          <div class="caixa1">
+            <img
+              src="./assets/Tubarão Branco.jpg"
+              alt="imagem tubarão no oceano" id="img_tubarão" width="690px"
+            />
+            <h2>Os tubarões possuem ossos?</h2>
+            <div class="resposta">
+              <select name="Questão 1" id="sel_Q1" onchange="resposta1()">
+                <option value="">--Selecione--</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+              </select>
+              <div id="div_resposta1"></div>
+            </div>
+          </div>
+          <div class="caixa2">
+            <img
+              src="./Quiz/Peixe - boca aberta.jpg"
+              alt="imagem peixe com a boca aberta"
+            />
+            <h2>Os peixes respiram pela boca??</h2>
+            <div class="resposta">
+              <select name="Questão 2" id="sel_Q2" onchange="resposta2()">
+                <option value="">--Selecione--</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+              </select>
+              <div id="div_resposta"></div>
+            </div>
+          </div>
+        </div>
+       <!--  <div class="container">
+         <button onclick="proxima()">Próxima Questão</button>*/
+        </div> --> 
+      </div>
+
+  </div>
+    <div class="footer">
+      <p>
+        Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
+        Desenvolvido por uma fanática em Biologia Marinha 🦀!
+      </p>
+    </div>
+  </body>
+</html>
+<script>
+
+var pontos = {
+  acertos:[],
+  erros:[]
+}
+  function resposta1() {
+
+    var resposta1 = sel_Q1.value;
+    var exibir
+    var mensagem
+
+    if (resposta1 == "") {
+      mensagem = ``;
+    }
+
+    if (resposta1 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px">Incorreto!</span> <br>`;
+    } else if(resposta1 == 2) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+    }
+
+    exibir = ` Os tubarões fazem parte da subclasse de peixes chamada elasmobrânquios,<br> que são peixes com esqueletos feitos de cartilagem no lugar de ossos.`;
+
+
+    div_resposta1.innerHTML = mensagem
+    
+    div_exibir.innerHTML = exibir
+    
+    
+    /*setTimeout(() => {
+      window.location="Quiz2.html";
+    }, 20000);*/
+
+  /* Construir página do DASHBOARD*/
+  /* Construir MODELAGEM LÓGIICA E TABELAS*/
+  /* Construir páginas do Quiz*/
+  
+  }
+  
+  function proxima(){
+
+    caixa2.style.background = green;
+
+  }
+</script>

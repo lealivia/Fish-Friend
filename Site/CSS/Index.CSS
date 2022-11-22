@@ -1,5 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+* { margin: 0; padding: 0;}
+.mySlides {display: none}
+
+img {
+vertical-align: middle;
+border-radius: 10px;}
 
 
 body::-webkit-scrollbar{
@@ -20,7 +26,9 @@ body{
     height: 100px;
 }
 
+/*EstilizaçÕes globais do site*/
 
+/*Header*/
 .header{
     display: flex;
     width: 100%;
@@ -66,8 +74,9 @@ body{
     justify-content: space-evenly;
     list-style: none;
     color: #ffff;
+    font-family: 'Roboto', sans-serif;
   }
-  
+
   .navbar ul li {
     font-size: 20px;
     font-weight: 400;
@@ -75,18 +84,20 @@ body{
     cursor: pointer;
   }
   
-  li :hover {
+  .navbar li :hover{
     color: #f47b2a;
   }
   
+  /*BANNER*/
+
   .banner {
     display: flex;
     align-items: center;
     margin-top: 5%;
     width: 100%;
     justify-content: center;
+    flex-direction: column;
   }
-  
   
   .banner video{
       position: fixed;
@@ -96,7 +107,7 @@ body{
       width: 100%;
   }
 
-  .banner .container-caixa{
+  .banner .container{
     z-index: 4;
     display: flex;
     flex-direction: column;
@@ -105,32 +116,116 @@ body{
     align-items:center;
     background-color: #79d3f67a;
     border-radius: 30px;
-    margin-bottom: 9%;
-    padding: 40px;
+    width: 872px;
+    height: 352px;
   }
 
+  
+/*PÁGINA INDEX */
+.info-Home h2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffff;
+  font-weight: 80px;
+  margin-bottom: 20px;
+}
 
+.info-Home p :hover{
+color: #f47b2a;
+}
+
+/*CARROUSSE*/
+
+.container-Slider .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin-top: 60px;
+    width: 500px;
+
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -11px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: #f47b2a;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.banner .container-Sorteio{
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  background-color: #79d3f67a;
+  border-radius: 30px;
+  margin-bottom: 2%;
+ width: 600px;
+ height: 601px;
+ margin-top: 10px;
+}
  .container .titulo, h2{
-    color: #ffff;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
+   color: #ffff;
+   font-weight: 500;
+   font-family: 'Poppins', sans-serif;
+   display: flex;
+   justify-content: center;
   }
-
+  
   .container p{
     color: #ffff;
-    font-size: 20px;
+    font-size: 23px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
   }
-
+  
   .container .caixa{
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
+  
   .container a{
     text-decoration: none;
     color: #ffff;
@@ -156,6 +251,7 @@ body{
     align-items: center;
     margin-bottom: 10px;
     font-family:'Poppins', sans-serif;
+    
   }
 
 

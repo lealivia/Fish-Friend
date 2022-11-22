@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="Index.CSS"/>
+    <link rel="stylesheet" href="./CSS/Index.CSS"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fish Friend</title>
   </head>
@@ -11,11 +11,12 @@
     <div class="header">
       <div class="container">
         <div class="logo">
-          <img src="./Img/carp-fish.png" alt="Logo do Fish Friend" />
+          <img src="./Assets/carp-fish.png" alt="Logo do Fish Friend" />
         </div>
         <div class="navbar">
           <ul>
             <li><a href="Index.html">Home</a></li>
+            <li><a href="Sobre.html">Sobre a Desenvolvedora</a></li>
             <li><a href="Cadastro.html">Quiz</a></li>
             <li><a href="Login.HTML">Login</a></li>
           </ul>
@@ -25,33 +26,68 @@
     <div class="banner">
         <video autoplay loop class="background">
             <source
-            src="BackGround/Embaixo Da Agua - 26830.mp4"
+            src="./Assets/BackGround/Embaixo Da Agua - 26830.mp4"
             type="video/mp4" />
         </video>
-        <div class="container-caixa">
         <div class="container">
-          <h2>Conheça o Fish Friend!</h2><br><br>
+        <div class="info-Home">
+          <h2>Conheça o Fish Friend!</h2>
           <p>Uma plataforma destinada aqueles que gostam da vida aquática e querem testar seu conhecimento sobre.<br><br>
-           <u><a href="./Cadastro.html"> Para isso temos aqui o Fish Quiz!</a></u><br><br>
-           Onde você se diverte enquanto aprende informações valiosas sobre nossos amigos marinhos. <br></p>
+           <u><a href="./Cadastro.html"> Faça o teste no Fish Quiz!</a></u><br><br>
+           Onde você se diverte enquanto aprende informações valiosas sobre nossos amigos marinhos. 
+           Mas antes de tudo realize seu <a href="./Cadastro.html">cadastro</a> para poder começar sua expedição.
+           <br></p>
+          </div>
         </div>
-        <div class="container">
+        <div class="container-Slider">
+          <div class="slideshow-container">
+        
+            <div class="mySlides fade">
+              <img src="./Assets/imagem 1 .jpg" style="width:500px">
+              <div class="text">Caption Text</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="./Assets/imagem 2 .jpg" style="width:500px">
+              <div class="text">Caption Two</div>
+            </div>
+            
+            <div class="mySlides fade">             
+               <img src="./Assets/imagem 3.jpg" style="width:500px">
+              <div class="text">Caption Three</div>
+            </div>
+
+            <div class="mySlides fade">
+              <img src="./Assets/imagem 4.jpg" style="width:500px">
+          <div class="text">Caption Three</div>
+
+            </div><div class="mySlides fade">
+              <img src="./Assets/imagem 5.jpg" style="width:500px">
+           <div class="text">Caption Three</div>
+
+            </div><div class="mySlides fade">        
+            <img src="./Assets/imagem 6.jpg" style="width:500px">
+            <div class="text">Caption Three</div>
+          </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            </div>
+            <br>
+                
+    </div>
+        <div class="container-Sorteio">
           <div class="titulo">
           <h2>Sorteie qual animal marinho você é!</h2>
         </div>
           <div class="caixa">
+            <img src="" id="imagem" width="290px" alt="">
             <div id="div_sorteio"></div>
             <button onclick="sorteio()">Sorteie aqui!</button>
           </div>
         </div>
-</div>
-        
     </div>
     <div class="footer">
-        <ul>
-          <li>Endereço</li>
-          <li>Contato</li>
-        </ul>
         <p>
           Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
           Desenvolvido por uma fanática em Biologia Marinha 🦀! 
@@ -60,80 +96,78 @@
 
   </body>
 </html>
-
 <script>
+
+  var animais = [
+    {nome:"CARANGUEJO",
+    img:"./Quiz/Caranguejo.jpg"},
+    {nome:"ORCA",
+    img: "./Quiz/Orca.jpg"},
+    {nome:"TUBARÃO MARTELO" ,
+    img: "./Quiz/tubarão martelo.jpg"},
+    {nome:"ÁGUA VIVA" ,
+    img: "./Quiz/Agua Viva.jpg"}, 
+    {nome:"AXOLOTE" ,
+    img: "./Quiz/Axolote.jpg"},  
+    {nome:"BAIACU" ,
+    img: "./Quiz/Baiacu.jpg"}, 
+    {nome:"BALEIA JUBARTE" ,
+    img: "./Quiz/Baleia jubarte.jpg"},    
+    {nome:"BELUGA" ,
+    img: "./Quiz/Beluga.jpg"},    
+    {nome:"FOCA" ,
+    img: "./Quiz/foca.jpg"},    
+    {nome:"GOLFINHO" ,
+    img: "./Quiz/Golfinho.jpg"},
+    {nome:"MOREIA" ,
+    img: "./Quiz/Moreia.jpg"},
+    {nome:"PEIXE PALHAÇO" ,
+    img: "./Quiz/Peixe Palhaço.jpg"},
+    {nome:"POLVO" ,
+    img: "./Quiz/Polvo.jpg"},
+    {nome:"RAIA" ,
+    img: "./Quiz/raia.jpg"},
+    {nome:"TUBARÃO BRANCO" ,
+    img: "./Quiz/Tubarao branco1.jpg"},
+    {nome:"TARTARUGA" ,
+    img: "./Quiz/tartaruga.png"},
+    {nome:"TUBARÃO BALEIA" ,
+    img: "./Quiz/Tubarão baleia.png"},
+  ]
+
   function sorteio(){
     var sorte = parseInt(1+Math.random()*17)
 
-    if(sorte== 1){
-      div_sorteio.innerHTML=`<img src="./Quiz/caranguejo.jpg" width="400px">`
+    imagem.src=animais[sorte].img
+    imagem.style.width=animais[animais.length-1].width
+    div_sorteio.src=animais[sorte].nome
 
-      div_sorteio.innerHTML+=`CARANGUEJO`
-    }else if(sorte == 2){
-      div_sorteio.innerHTML=`<img src="./Quiz/Orca.jpg" width="300px">`
-
-      div_sorteio.innerHTML+=`ORCA`
-    }else if(sorte == 3){
-      div_sorteio.innerHTML=`<img src="./Quiz/Tubarão Martelo.jpg" width="400px">`
-
-      div_sorteio.innerHTML+=`TUBARÃO MARTELO`
-    }else if(sorte == 4){
-      div_sorteio.innerHTML=`<img src="./Quiz/agua_viva.jpg" width="260px">`
-
-      div_sorteio.innerHTML+=`ÁGUA VIVA`
-    }else if(sorte == 5){
-      div_sorteio.innerHTML=`<img src="./Quiz/Axolote.jpg" width="300px">`
-
-      div_sorteio.innerHTML+=`AXOLOTE`
-    }else if(sorte == 6){
-      div_sorteio.innerHTML=`<img src="./Quiz/Baiacu.jpg" width="300px">`
-
-      div_sorteio.innerHTML+=`BAIACU`
-    }else if(sorte == 7){
-      div_sorteio.innerHTML=`<img src="./Quiz/Baleia jubarte.jpg" width="400px">`
-
-      div_sorteio.innerHTML+=`BALEIA JUBARTE`
-    }else if(sorte == 8){
-      div_sorteio.innerHTML=`<img src="./Quiz/Beluga.jpg" width="500px">`
-
-      div_sorteio.innerHTML+=`BELUGA`
-    }else if(sorte == 9){
-      div_sorteio.innerHTML=`<img src="./Quiz/foca.jpg" width="320px">`
-
-      div_sorteio.innerHTML+=`FOCA`
-    }else if(sorte == 10){
-      div_sorteio.innerHTML=`<img src="./Quiz/Golfinho.jpg" width="300px">`
-
-      div_sorteio.innerHTML+=`GOLFINHO`
-    }else if(sorte == 11){
-      div_sorteio.innerHTML=`<img src="./Quiz/Moreia.jpg" width="300px">`
-
-      div_sorteio.innerHTML+=`MOREIA`
-    }else if(sorte == 12){
-      div_sorteio.innerHTML=`<img src="./Quiz/Peixe - palhaço.jpg" width="200px">`
-
-      div_sorteio.innerHTML+=`PEIXE PALHAÇO`
-    }else if(sorte == 13){
-      div_sorteio.innerHTML=`<img src="./Quiz/Polvo.jpg" width="300px">`
-
-      div_sorteio.innerHTML+=`POLVO`
-    }else if(sorte == 14){
-      div_sorteio.innerHTML=`<img src="./Quiz/Raia.jpg" width="320px">`
-
-      div_sorteio.innerHTML+=`RAIA`
-    }else if(sorte == 15){
-      div_sorteio.innerHTML=`<img src="./Quiz/Sharks.jpg" width="320px">`
-
-      div_sorteio.innerHTML+=`TUBARÃO BRANCO`
-    }else if(sorte == 16){
-      div_sorteio.innerHTML=`<img src="./Quiz/Tartaruga.jpg" width="300px">`
-
-      div_sorteio.innerHTML+=`TARTARUGA`
-    }else{
-      div_sorteio.innerHTML=`<img src="./Quiz/Tubarão Baleia.jpg" width="500px">`
-
-      div_sorteio.innerHTML+=`TUBARÃO BALEIA`
-    }
   }
 
+  let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
 </script>

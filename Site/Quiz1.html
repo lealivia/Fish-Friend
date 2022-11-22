@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Quiz.CSS" />
+    <link rel="stylesheet" href="./CSS/Quiz.CSS" />
     <title>Fish Friend</title>
   </head>
   <body>
     <div class="header">
       <div class="container">
         <div class="logo">
-          <img src="./Img/carp-fish.png" alt="Logo do Fish Friend" />
+          <img src="./Assets/carp-fish.png" alt="Logo do Fish Friend" />
         </div>
         <div class="navbar">
           <ul>
             <li><a href="Index.html">Home</a></li>
-            <li><a href="Quiz1.html">Quiz</a></li>
-            <li><a href="Cadastro.html">Cadastro</a></li>
+            <li><a href="Sobre.html">Sobre a Desenvolvedora</a></li>
+            <li><a href="Quiz.html">Quiz</a></li>
             <li><a href="Login.HTML">Login</a></li>
           </ul>
         </div>
@@ -25,16 +25,14 @@
     </div>
     <div class="banner">
       <video autoplay loop class="background">
-        <source src="BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
+        <source src="./assets/BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
       </video>
-      <div class="explicar" id="explicar">
-        <div id="div_exibir"></div>
-      </div>
       <div class="container">
         <div class="caixas">
-          <div class="caixa1">
+<!--------------------------------------------------------------------------------------------------->
+          <div class="caixa" id="Quiz1">
             <img
-              src="./Img/oleksandr-sushko-8SgEUGN29DA-unsplash.jpg"
+              src="./Assets/Tubarão Branco.jpg"
               alt="imagem tubarão no oceano" id="img_tubarão" width="690px"
             />
             <h2>Os tubarões possuem ossos?</h2>
@@ -44,36 +42,62 @@
                 <option value="1">Sim</option>
                 <option value="2">Não</option>
               </select>
-              <div id="div_resposta"></div>
+              <div id="div_resposta1"></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div id="div_exibir"></div>
             </div>
           </div>
-          <div class="caixa2">
+<!--------------------------------------------------------------------------------------------------->
+
+          <div class="caixa" id="Quiz2">
             <img
               src="./Quiz/Peixe - boca aberta.jpg"
               alt="imagem peixe com a boca aberta"
             />
-            <h2>Os peixes respiram pela boca??</h2>
+            <h2>Os peixes respiram pela boca?</h2>
             <div class="resposta">
               <select name="Questão 2" id="sel_Q2" onchange="resposta2()">
                 <option value="">--Selecione--</option>
                 <option value="1">Sim</option>
                 <option value="2">Não</option>
               </select>
-              <div id="div_resposta"></div>
+              <div id="div_resposta2" ></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div id="div_exibir1"></div>
             </div>
           </div>
-        </div>
-        <div class="container">
-          <button onclick="proxima()">Próxima Questão</button>
-        </div>
-      </div>
+ <!-------------------------------------------------------------------------------------------------->
 
+          <div class="caixa" id="Quiz3">
+            <img
+              src="./Assets/algas.jpg"
+              alt="imagem de algas marinhas" id="img_algas" width="590px"
+            />
+            <h2>As algas ajudam com o armazenamento do carbono no ar?</h2>
+            <div class="resposta">
+              <select name="Questão 2" id="sel_Q2" onchange="resposta1()">
+                <option value="">--Selecione--</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+              </select>
+              <div id="div_resposta3"></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div id="div_exibir2"></div>
+            </div>
+          </div>
+
+<!--------------------------------------------------------------------------------------------------->          
+        </div> 
+      </div>
+        <div class="container-button">
+          <button class="botao" onclick="proxima()">Próxima Questão</button>
+          <button class="botao" onclick="anterior()">Questão anterior</button>
+        </div>
   </div>
     <div class="footer">
-      <ul>
-        <li>Endereço</li>
-        <li>Contato</li>
-      </ul>
       <p>
         Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
         Desenvolvido por uma fanática em Biologia Marinha 🦀!
@@ -83,49 +107,108 @@
 </html>
 <script>
 
-var pontos = {
-  acertos:[],
-  erros:[]
-}
+
+  acertos=[
+  {Questão1:""},
+  {Questão2:""},
+  {Questão3:""},
+  {Questão4:""},
+  {Questão5:""},
+  {Questão6:""},
+  {Questão7:""},
+  {Questão8:""} 
+  ]
+
+  ,
+  erros=[
+  {Questão1:""},
+  {Questão2:""},
+  {Questão3:""},
+  {Questão4:""},
+  {Questão5:""},
+  {Questão6:""},
+  {Questão7:""},
+  {Questão8:""} 
+  ]
+
+  var contador = 1
   function resposta1() {
 
     var resposta1 = sel_Q1.value;
-    var exibir;
-    var mensagem;
+    var exibir1 
+    var mensagem_1
 
     if (resposta1 == "") {
-      mensagem = ``;
+      mensagem_1 = ``;
+      exibir1 = "";
     }
 
     if (resposta1 == 1) {
-      mensagem = `<span style="color: red" font-size="20px"><b>Incorreto!</b></span> <br>`;
-    } else if(resposta1 == 2) {
-      mensagem = `<span style="color: green" font-size="20px"> Correto! </span>`;
-    }
-
-    //explicar.Quiz1.display= "block";
-
-    exibir = ` Os tubarões fazem parte da subclasse de peixes chamada elasmobrânquios,<br> que são peixes com esqueletos feitos de cartilagem no lugar de ossos.`;
-
-
-    div_resposta.innerHTML = mensagem;
-    
-    div_exibir.innerHTML = exibir;
-    
-    
-    /*setTimeout(() => {
-      window.location="Quiz2.html";
-    }, 20000);*/
-
-    
-    function proxima(){
-
-      caixa.Quiz2.display= "flex";
+      mensagem_1 = `<span style="color: #fffff" font-size="20px">Incorreto!</span> <br>`
       
+      //acertos.Questão1.push(contador);
+
+    } else if(resposta1 == 2) {
+      mensagem_1 = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+      
+      //erros.Questão1.push(contador);
     }
+
+    exibir1 = ` Os tubarões fazem parte da subclasse de peixes chamada elasmobrânquios,<br> que são peixes com esqueletos feitos de cartilagem no lugar de ossos.`;
+
+
+    div_resposta1.innerHTML = mensagem_1
     
+    div_exibir1.innerHTML = exibir1
   }
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+      mensagem = ""
+      exibir= ""
+  
+      function resposta2(){
+      var resposta2 = sel_Q2.value;
+      var exibir2;
+      var mensagem_2;
+      
+    if (resposta2 == "") {
+        mensagem_2 = ``;
+        exibir2 = ``;
+      }
+
+    if (resposta2 == 1) {
+      mensagem_2 = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+     
+    } else if (resposta2 == 2){
+      mensagem_2 =`<span style="color: #fffff" font-size="20px">Incorreto!</span> <br>`;
+    }
+
+    exibir2 = `<span style="background-color: #79d3f67a" border-radius="10px"> A água entra pela boca do peixe e vai até às guelras. Aí, o sangue recebe oxigênio.<br> Depois, expulsa dióxido de carbono pelos opérculos, que são na realidade os buracos que se encontram em cada lado da cabeça do peixe.</span>`;
+
+    div_resposta2.innerHTML = mensagem_2;
+
+    div_exibir2.innerHTML = exibir2;
+
+  }
+
+  //----------------------------------------------------------------------------------------------------
+  
+  Quiz1.style.display = "flex";
+  
+function proxima(){
+var divs=document.querySelectorAll('.caixa')
+
+
+console.log(`for: ${objeto}`)
+
+}
+
+  function anterior(){
+    divs[1]
+    Quiz1.style.display = "flex";
+    Quiz2.style.display = "none";
+  }
 </script>
 
 

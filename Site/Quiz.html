@@ -1,49 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Quiz.CSS" />
-    <title>Fish Friend</title>
-  </head>
-  <body>
-    <div class="header">
-      <div class="container">
-        <div class="logo">
-          <img src="./Img/carp-fish.png" alt="Logo do Fish Friend" />
-        </div>
-        <div class="navbar">
-          <ul>
-            <li><a href="Index.html">Home</a></li>
-            <li><a href="Cadastro.html">Quiz</a></li>
-            <li><a href="Login.HTML">Login</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="banner">
-      <video autoplay loop class="background">
-        <source src="BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
-      </video>
-      <div class="explicar">
-        <div id="div_exibir"></div>
-      </div>
-      <div class="container">
-        <div class="caixas">
-          <h2></h2>
+ <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./CSS/Quiz.CSS" />
+      <title>Fish Friend</title>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+      <div class="header">
+        <div class="container">
+          <div class="logo">
+            <img src="./assets/carp-fish.png" alt="Logo do Fish Friend" />
+          </div>
+          <div class="navbar">
+            <ul>
+              <li><a href="Quiz1.html">Quiz</a></li>
+              <li><a href="Login.HTML">Deslogar</a></li>
+            </ul>
           </div>
         </div>
       </div>
+      <div class="banner">
+        <video autoplay loop class="background">
+          <source src="./Assets/BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
+        </video>
+        <div class="container">
+          <div class="info-Sobre">
+            <h2> Fish Quiz</h2><br> <br>
+            <p> Aqui você começa sua jornada de descobrimento e por que não tornar isso mais interessante? <br> <br>
+  
+              Você pode medir a sua evolução atráves do nosso Ranking oceânico. 
+  <br>
+              E para ficar ainda melhor por quê não trazer os amigos e realizar uma saudável competição?
+  <br>
+  <br><br>
+            </p>
+           </div>
+           <div class="container-rank">
+            <div class="ranking">
+              <div>
+                <canvas id="myChart"></canvas>
+              </div>
+              <!--<h2>Ranking oceânico</h2>
+            
+              <p>Zona Hadopelágica</p>
+              <div class=".container-rank">
+                <div class="p1">1°</div>
+              </div>
+              <p>Zona Abissopelágica</p>
+              <div class=".container-rank">
+                <div class="p2">2°</div>
+              </div>
+              <p>Zona Batipelágica </p>
+              <div class=".container-rank">
+                <div class="p3">3°</div>
+              </div>
+              <p>Zona Mesopelágica</p>
+              <div class=".container-rank">
+                <div class="p4">4°</div>
+              </div>
+              <p>Zona Epipelágica</p>
+              <div class=".container-rank">
+                <div class="p5">5°</div>
+              </div> -->        
+            </div>
+           </div>
+        </div>
+      </div>
     <div class="footer">
-      <ul>
-        <li>Endereço</li>
-        <li>Contato</li>
-      </ul>
-      <p>
-        Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
-        Desenvolvido por uma fanática em Biologia Marinha 🦀!
-      </p>
-    </div>
-  </body>
+        <p>
+          Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
+          Desenvolvido por uma fanática em Biologia Marinha 🦀! 
+        </p>
+      </div>
+    </body>
 </html>
+<script>  
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Zona Hadopelágica', 'Zona Abissopelágica', 'Zona Batipelágica', 'Zona Mesopelágica', 'Zona Epipelágica'],
+      datasets: [{
+        label: 'Ranking oceânico',
+        data: [12, 19, 3, 5, 2],
+        borderWidth: 1,
+        backgroundColor:'#f47b2a'
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks:{
+            color:'#ffffff'
+          }
+        },
+        x:{
+          ticks:{
+            color:'#ffffff'
+          }
+        }
+      }
+    }
+  });
+
+Chart.defaults.font.size = 18;
+Chart.defaults.color= '#ffffff';
+let chart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: {
+        plugins: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 17,
+                    }
+
+                }
+            }
+        }
+    }
+});
+
+
+</script>
+    
+    
