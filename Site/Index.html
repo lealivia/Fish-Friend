@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./CSS/Index.CSS"/>
+    <link rel="shortcut icon" href="./Assets/carp-fish.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fish Friend</title>
   </head>
@@ -43,30 +44,30 @@
           <div class="slideshow-container">
         
             <div class="mySlides fade">
-              <img src="./Assets/imagem 1 .jpg" style="width:500px">
+              <img src="./Assets/Carrossel/imagem 1 .jpg" style="width:500px">
               <div class="text">Caption Text</div>
             </div>
             
             <div class="mySlides fade">
-              <img src="./Assets/imagem 2 .jpg" style="width:500px">
+              <img src="./Assets/Carrossel/imagem 2 .jpg" style="width:500px">
               <div class="text">Caption Two</div>
             </div>
             
             <div class="mySlides fade">             
-               <img src="./Assets/imagem 3.jpg" style="width:500px">
+               <img src="./Assets/Carrossel/imagem 3.jpg" style="width:500px">
               <div class="text">Caption Three</div>
             </div>
 
             <div class="mySlides fade">
-              <img src="./Assets/imagem 4.jpg" style="width:500px">
+              <img src="./Assets/Carrossel/imagem 4.jpg" style="width:500px">
           <div class="text">Caption Three</div>
 
             </div><div class="mySlides fade">
-              <img src="./Assets/imagem 5.jpg" style="width:500px">
+              <img src="./Assets/Carrossel/imagem 5.jpg" style="width:500px">
            <div class="text">Caption Three</div>
 
             </div><div class="mySlides fade">        
-            <img src="./Assets/imagem 6.jpg" style="width:500px">
+            <img src="./Assets/Carrossel/imagem 6.jpg" style="width:500px">
             <div class="text">Caption Three</div>
           </div>
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -100,46 +101,45 @@
 
   var animais = [
     {nome:"CARANGUEJO",
-    img:"./Quiz/Caranguejo.jpg"},
+    img:"./Assets/sortear/Caranguejo.jpg"},
     {nome:"ORCA",
-    img: "./Quiz/Orca.jpg"},
+    img: "./Assets/sortear/Orca.jpg"},
     {nome:"TUBARÃO MARTELO" ,
-    img: "./Quiz/tubarão martelo.jpg"},
+    img: "./Assets/sortear/tubarão martelo.jpg"},
     {nome:"ÁGUA VIVA" ,
-    img: "./Quiz/Agua Viva.jpg"}, 
+    img: "./Assets/sortear/Agua Viva.jpg"}, 
     {nome:"AXOLOTE" ,
-    img: "./Quiz/Axolote.jpg"},  
+    img: "./Assets/sortear/Axolote.jpg"},  
     {nome:"BAIACU" ,
-    img: "./Quiz/Baiacu.jpg"}, 
+    img: "./Assets/sortear/Baiacu.jpg"}, 
     {nome:"BALEIA JUBARTE" ,
-    img: "./Quiz/Baleia jubarte.jpg"},    
+    img: "./Assets/sortear/Baleia jubarte.jpg"},    
     {nome:"BELUGA" ,
-    img: "./Quiz/Beluga.jpg"},    
+    img: "./Assets/sortear/Beluga.jpg"},    
     {nome:"FOCA" ,
-    img: "./Quiz/foca.jpg"},    
+    img: "./Assets/sortear/foca.jpg"},    
     {nome:"GOLFINHO" ,
-    img: "./Quiz/Golfinho.jpg"},
+    img: "./Assets/sortear/Golfinho.jpg"},
     {nome:"MOREIA" ,
-    img: "./Quiz/Moreia.jpg"},
+    img: "./Assets/sortear/Moreia.jpg"},
     {nome:"PEIXE PALHAÇO" ,
-    img: "./Quiz/Peixe Palhaço.jpg"},
+    img: "./Assets/sortear/Peixe Palhaço.jpg"},
     {nome:"POLVO" ,
-    img: "./Quiz/Polvo.jpg"},
+    img: "./Assets/sortear/Polvo.jpg"},
     {nome:"RAIA" ,
-    img: "./Quiz/raia.jpg"},
+    img: "./Assets/sortear/raia.jpg"},
     {nome:"TUBARÃO BRANCO" ,
-    img: "./Quiz/Tubarao branco1.jpg"},
+    img: "./Assets/sortear/Tubarao branco1.jpg"},
     {nome:"TARTARUGA" ,
-    img: "./Quiz/tartaruga.png"},
+    img: "./Assets/sortear/tartaruga.png"},
     {nome:"TUBARÃO BALEIA" ,
-    img: "./Quiz/Tubarão baleia.png"},
+    img: "./Assets/sortear/Tubarão baleia.png"}
   ]
 
   function sorteio(){
     var sorte = parseInt(1+Math.random()*17)
 
     imagem.src=animais[sorte].img
-    imagem.style.width=animais[animais.length-1].width
     div_sorteio.src=animais[sorte].nome
 
   }

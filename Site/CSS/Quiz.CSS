@@ -110,7 +110,7 @@ body {
 
 /*Página sobre a Desenvolvedora*/
 .info-Sobre{
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -151,7 +151,7 @@ a:hover{
   margin-top: 80px;
   
 }
-
+ 
 .ranking{
   text-align: left;
   padding-top: 10px;
@@ -161,7 +161,8 @@ a:hover{
   font-size: 16px;
   border-radius: 10px;
   background-color: #79d3f67a;
-  width: 890px;
+  width: 905px;
+  margin-bottom: 20px;
 }
 
 h2{
@@ -174,7 +175,7 @@ p{
   margin-left: 25px;
 }
 
-.p1{
+/*.p1{
   width: 800px;
   margin-left: 25px;
   background-color: #f47b2a;
@@ -202,8 +203,37 @@ p{
   width: 150px;
   margin-left: 25px;
   background-color: #f47b2a;
+}*/
+
+.lengendas{
+  display: flex;
+  background-color: #79d3f67a;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-top: 30px;
+  width: 1000px;
 }
 
+.lengendas h2{
+  color: #fff;  
+  margin-bottom: 20px;
+}
+
+.lengendas li {
+  margin-left: 8px;
+  margin-right: 10px;
+  color: #ffff;
+  font-family:"Poppins", sans-serif;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.lengendas a {
+  margin-right: 40px;
+  text-align: start;
+  color: #fff;
+  font-weight: bold;
+}
 
 /*CAIXAS DAS PÁGINAS DO QUIZ*/
 
@@ -213,30 +243,33 @@ p{
   border-radius: 30px;
   align-items: center;
   justify-content: center;
-  height: 600px;
+  height: 575px;
   display: flex;
 }
 
 
-.caixa1 {
-  display: flex;
+.caixa {
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 872px;
-  margin-top: 35px;
+  margin-top: -34px;
 }
 
 
-.caixa1 img{
+.caixa img{
 border-radius: 10px;
 }
 
-.caixa1 h2 {
+.caixa h2 {
+  display: flex;
+  margin-bottom: 10px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  margin-top: 27px;
 }
-
+/*
 .caixa2 {
   display: none;
   align-items: center;
@@ -271,7 +304,7 @@ border-radius: 10px;
 .caixa3 h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-}
+}*/
 
 .container-button{
   display: flex;
@@ -321,12 +354,13 @@ ACHAR ESSA CLASS
 }
 
 .resposta,
-#sel_Q1 {
+#sel_Q {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border: none;
+  margin-top: 8px;
 }
 
 .resposta div {

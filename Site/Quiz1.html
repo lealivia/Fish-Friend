@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/Quiz.CSS" />
+    <link rel="shortcut icon" href="./Assets/carp-fish.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fish Friend</title>
   </head>
   <body>
@@ -18,26 +19,25 @@
             <li><a href="Index.html">Home</a></li>
             <li><a href="Sobre.html">Sobre a Desenvolvedora</a></li>
             <li><a href="Quiz.html">Quiz</a></li>
-            <li><a href="Login.HTML">Login</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="banner">
       <video autoplay loop class="background">
-        <source src="./assets/BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
+        <source src="./Assets/BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
       </video>
       <div class="container">
         <div class="caixas">
 <!--------------------------------------------------------------------------------------------------->
           <div class="caixa" id="Quiz1">
+            <h2>Os tubarões possuem ossos?</h2>
             <img
-              src="./Assets/Tubarão Branco.jpg"
+              src="./Quiz/Tubarão Branco.jpg"
               alt="imagem tubarão no oceano" id="img_tubarão" width="690px"
             />
-            <h2>Os tubarões possuem ossos?</h2>
             <div class="resposta">
-              <select name="Questão 1" id="sel_Q1" onchange="resposta1()">
+              <select name="Questão 1" id="sel_Q" onchange="resposta1()">
                 <option value="">--Selecione--</option>
                 <option value="1">Sim</option>
                 <option value="2">Não</option>
@@ -51,13 +51,13 @@
 <!--------------------------------------------------------------------------------------------------->
 
           <div class="caixa" id="Quiz2">
+            <h2>Os peixes respiram pela boca?</h2>
             <img
               src="./Quiz/Peixe - boca aberta.jpg"
-              alt="imagem peixe com a boca aberta"
+              alt="imagem peixe com a boca aberta" width="610px"
             />
-            <h2>Os peixes respiram pela boca?</h2>
             <div class="resposta">
-              <select name="Questão 2" id="sel_Q2" onchange="resposta2()">
+              <select name="Questão 2" id="sel_Q" onchange="resposta2()">
                 <option value="">--Selecione--</option>
                 <option value="1">Sim</option>
                 <option value="2">Não</option>
@@ -65,19 +65,19 @@
               <div id="div_resposta2" ></div>
             </div>
             <div class="explicar" id="explicar">
-              <div id="div_exibir1"></div>
+              <div id="div_exibir"></div>
             </div>
           </div>
  <!-------------------------------------------------------------------------------------------------->
 
           <div class="caixa" id="Quiz3">
-            <img
-              src="./Assets/algas.jpg"
-              alt="imagem de algas marinhas" id="img_algas" width="590px"
-            />
             <h2>As algas ajudam com o armazenamento do carbono no ar?</h2>
+            <img
+              src="./Quiz/algas.jpg"
+              alt="imagem de algas marinhas" id="img_algas" width="600px"
+            />
             <div class="resposta">
-              <select name="Questão 2" id="sel_Q2" onchange="resposta1()">
+              <select name="Questão 3" id="sel_Q" onchange="resposta3()">
                 <option value="">--Selecione--</option>
                 <option value="1">Sim</option>
                 <option value="2">Não</option>
@@ -85,12 +85,147 @@
               <div id="div_resposta3"></div>
             </div>
             <div class="explicar" id="explicar">
-              <div id="div_exibir2"></div>
+              <div id="div_exibir"></div>
             </div>
           </div>
 
 <!--------------------------------------------------------------------------------------------------->          
-        </div> 
+
+          <div class="caixa" id="Quiz4">
+            <h2>Quais outros nome podemos chamar as esponjas do mar?</h2>
+            <img
+              src="./Quiz/esponja do mar.jpg"
+              alt="imagem de esponjas do mar" id="img_esponjas" width="590px" height="400px"
+            />
+            <div class="resposta">
+              <select name="Questão 4" id="sel_Q" onchange="resposta4()">
+                <option value="">--Selecione--</option>
+                <option value="1">Poríferos</option>
+                <option value="2">Buchas-do-Mar</option>
+              </select>
+              <div id="div_resposta4"></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div id="div_exibir"></div>
+            </div>
+          </div>
+
+          <!--------------------------------------------------------------------------------------------------->       
+          <div class="caixa" id="Quiz5">
+            <h2>Quantos tipos de répteis marinhos são encontrados hoje no mar?</h2>
+            <img
+              src="./Quiz/repteis-marinhos.jpg"
+              alt="imagem de uma tartaruga marinha" id="img_repteis" width="590px"
+            />
+            <div class="resposta">
+              <select name="Questão 5" id="sel_Q" onchange="resposta4()">
+                <option value="">--Selecione--</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+              </select>
+              <div id="div_resposta5"></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div id="div_exibir"></div>
+            </div>
+          </div>
+          <!--------------------------------------------------------------------------------------------------->
+          <div class="caixa" id="Quiz6">
+            <h2>É correto afirmar que existem mais de 7.000 espécies de equinodermos no mar atualmente?</h2>
+            <img
+              src="./Quiz/ouriço-do-mar.jpg"
+              alt="imagem de um ouriço do mar" id="img_ouriço" width="590px" height="400px"
+            />
+            <div class="resposta">
+              <select name="Questão 6" id="sel_Q" onchange="resposta4()">
+                <option value="">--Selecione--</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+              </select>
+              <div id="div_resposta6"></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div id="div_exibir"></div>
+            </div>
+          </div>  
+<!--------------------------------------------------------------------------------------------------->
+            <div class="caixa" id="Quiz6">
+              <h2>A qual grupo pertence as águas-vivas?</h2>
+              <img
+                src="./Quiz/agua-viva.jpg"
+                alt="imagem de um ouriço do mar" id="img_ouriço" width="590px" height="400px"
+              />
+              <div class="resposta">
+                <select name="Questão 6" id="sel_Q" onchange="resposta4()">
+                  <option value="">--Selecione--</option>
+                  <option value="1">Cnidários</option>
+                  <option value="2">poríferos</option>
+                </select>
+                <div id="div_resposta6"></div>
+              </div>
+              <div class="explicar" id="explicar">
+                <div id="div_exibir"></div>
+              </div>
+            </div>  
+<!--------------------------------------------------------------------------------------------------->
+            <div class="caixa" id="Quiz7">
+              <h2>É correto afirmar que o polvo e a água-viva fazem parte da mesma família?</h2>
+              <img
+                src="./Quiz/baby-polvo.jpg"
+                alt="imagem de um polvo bebê" id="img_polvo-bebe" width="590px" height="400px"
+              />
+              <div class="resposta">
+                <select name="Questão 7" id="sel_Q" onchange="resposta4()">
+                  <option value="">--Selecione--</option>
+                  <option value="1">Sim</option>
+                  <option value="2">Não</option>
+                </select>
+                <div id="div_resposta7"></div>
+              </div>
+              <div class="explicar" id="explicar">
+                <div id="div_exibir"></div>
+              </div>
+            </div>  
+<!--------------------------------------------------------------------------------------------------->
+            <div class="caixa" id="Quiz8">
+              <h2>O que seria uma Holothuria sanctori?</h2>
+              <img
+                src="./Quiz/pepino do mar.jpg"
+                alt="imagem de um pepino do mar" id="img_pepino-do-mar" width="590px" height="400px"
+              />
+              <div class="resposta">
+                <select name="Questão 8" id="sel_Q" onchange="resposta4()">
+                  <option value="">--Selecione--</option>
+                  <option value="1">Pepino do Mar</option>
+                  <option value="2">Lesma do Mar</option>
+                </select>
+                <div id="div_resposta8"></div>
+              </div>
+              <div class="explicar" id="explicar">
+                <div id="div_exibir"></div>
+              </div>
+            </div>  
+<!--------------------------------------------------------------------------------------------------->
+            <div class="caixa" id="Quiz9">
+              <h2>É correto afirmar que vermes marinhos podem ser considerados primos das minhocas?</h2>
+              <img
+                src="./Quiz/verme marinho.jpg"
+                alt="imagem de um polvo bebê" id="img_bebe" width="590px" height="400px"
+              />
+              <div class="resposta">
+                <select name="Questão 9" id="sel_Q" onchange="resposta4()">
+                  <option value="">--Selecione--</option>
+                  <option value="1">Sim</option>
+                  <option value="2">Não</option>
+                </select>
+                <div id="div_resposta9"></div>
+              </div>
+              <div class="explicar" id="explicar">
+                <div id="div_exibir"></div>
+              </div>
+            </div>       
+
+</div> 
       </div>
         <div class="container-button">
           <button class="botao" onclick="proxima()">Próxima Questão</button>
@@ -108,106 +243,178 @@
 <script>
 
 
-  acertos=[
-  {Questão1:""},
-  {Questão2:""},
-  {Questão3:""},
-  {Questão4:""},
-  {Questão5:""},
-  {Questão6:""},
-  {Questão7:""},
-  {Questão8:""} 
-  ]
-
-  ,
-  erros=[
-  {Questão1:""},
-  {Questão2:""},
-  {Questão3:""},
-  {Questão4:""},
-  {Questão5:""},
-  {Questão6:""},
-  {Questão7:""},
-  {Questão8:""} 
-  ]
-
-  var contador = 1
+  var acerto = 0
+  var ponto = 0
+  
   function resposta1() {
 
     var resposta1 = sel_Q1.value;
-    var exibir1 
-    var mensagem_1
+    var exibir
+    var mensagem
 
     if (resposta1 == "") {
-      mensagem_1 = ``;
-      exibir1 = "";
+      mensagem = ``;
+      exibir = "";
     }
 
     if (resposta1 == 1) {
-      mensagem_1 = `<span style="color: #fffff" font-size="20px">Incorreto!</span> <br>`
-      
+      mensagem = `<span style="color: #fffff" font-size="20px">Incorreto!</span> <br>`
+      acerto= acerto+2
       //acertos.Questão1.push(contador);
 
     } else if(resposta1 == 2) {
-      mensagem_1 = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
       
       //erros.Questão1.push(contador);
     }
 
-    exibir1 = ` Os tubarões fazem parte da subclasse de peixes chamada elasmobrânquios,<br> que são peixes com esqueletos feitos de cartilagem no lugar de ossos.`;
+    exibir = ` Os tubarões fazem parte da subclasse de peixes chamada elasmobrânquios,<br> que são peixes com esqueletos feitos de cartilagem no lugar de ossos.`;
 
 
-    div_resposta1.innerHTML = mensagem_1
+    div_resposta.innerHTML = mensagem
     
-    div_exibir1.innerHTML = exibir1
+    div_exibir.innerHTML = exibir
   }
 
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-      mensagem = ""
-      exibir= ""
-  
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
       function resposta2(){
       var resposta2 = sel_Q2.value;
-      var exibir2;
-      var mensagem_2;
+      var exibir;
+      var mensagem
       
     if (resposta2 == "") {
-        mensagem_2 = ``;
-        exibir2 = ``;
+        mensagem = ``;
+        exibir = ``;
       }
 
     if (resposta2 == 1) {
-      mensagem_2 = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
      
     } else if (resposta2 == 2){
-      mensagem_2 =`<span style="color: #fffff" font-size="20px">Incorreto!</span> <br>`;
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span> <br>`;
     }
 
-    exibir2 = `<span style="background-color: #79d3f67a" border-radius="10px"> A água entra pela boca do peixe e vai até às guelras. Aí, o sangue recebe oxigênio.<br> Depois, expulsa dióxido de carbono pelos opérculos, que são na realidade os buracos que se encontram em cada lado da cabeça do peixe.</span>`;
+    exibir = `<span style="background-color: #79d3f67a" border-radius="10px"> A água entra pela boca do peixe e vai até às guelras. Aí, o sangue recebe oxigênio.<br> Depois, expulsa dióxido de carbono pelos opérculos, que são na realidade os buracos que se encontram em cada lado da cabeça do peixe.</span>`;
 
-    div_resposta2.innerHTML = mensagem_2;
+    div_resposta.innerHTML = mensagem;
 
-    div_exibir2.innerHTML = exibir2;
+    div_exibir.innerHTML = exibir;
 
   }
 
-  //----------------------------------------------------------------------------------------------------
+  //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  function resposta3(){
+      var resposta3 = sel_Q3.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta3 == "") {
+        mensagem = ``;
+        exibir = ``;
+      }
+
+    if (resposta3 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+     
+    } else if (resposta3 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span> <br>`;
+    }
+
+    exibir = `<span style="background-color: #79d3f67a" border-radius="10px"> A água entra pela boca do peixe e vai até às guelras. Aí, o sangue recebe oxigênio.<br> Depois, expulsa dióxido de carbono pelos opérculos, que são na realidade os buracos que se encontram em cada lado da cabeça do peixe.</span>`;
+
+    div_resposta.innerHTML = mensagem;
+
+    div_exibir.innerHTML = exibir;
+
+  }
   
+  //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  function resposta4(){
+      var resposta4 = sel_Q4.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta4 == "") {
+        mensagem = ``;
+        exibir = ``;
+      }
+
+    if (resposta4 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+     
+    } else if (resposta4 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span> <br>`;
+    }
+
+    exibir = `<span style="background-color: #79d3f67a" border-radius="10px"> A água entra pela boca do peixe e vai até às guelras. Aí, o sangue recebe oxigênio.<br> Depois, expulsa dióxido de carbono pelos opérculos, que são na realidade os buracos que se encontram em cada lado da cabeça do peixe.</span>`;
+
+    div_resposta.innerHTML = mensagem;
+
+    div_exibir.innerHTML = exibir;
+
+  }
+  
+  //----------------------------------------------------------------------------------------------------------------------------
+  function resposta5(){
+      var resposta5 = sel_Q5.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta5 == "") {
+        mensagem = ``;
+        exibir = ``;
+      }
+
+    if (resposta5 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+     
+    } else if (resposta5 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span> <br>`;
+    }
+
+    exibir = `<span style="background-color: #79d3f67a" border-radius="10px"> A água entra pela boca do peixe e vai até às guelras. Aí, o sangue recebe oxigênio.<br> Depois, expulsa dióxido de carbono pelos opérculos, que são na realidade os buracos que se encontram em cada lado da cabeça do peixe.</span>`;
+
+    div_resposta.innerHTML = mensagem;
+
+    div_exibir.innerHTML = exibir;
+
+  }
+  
+  //-
+
+
+
+
+
+
   Quiz1.style.display = "flex";
+  Quiz2.style.display = "none";
+  Quiz3.style.display="none"
   
-function proxima(){
-var divs=document.querySelectorAll('.caixa')
+  var contadora = 0;
+  var divs= document.querySelectorAll('.caixa')
 
-
-console.log(`for: ${objeto}`)
-
-}
-
+  
+  function proxima(){
+    divs[contadora].style.display = "none";
+    contadora++;
+    divs[contadora].style.display = "flex";
+  }
+  
   function anterior(){
-    divs[1]
-    Quiz1.style.display = "flex";
-    Quiz2.style.display = "none";
+
+    divs[contadora].style.display = "none";
+    contadora--;
+    divs[contadora].style.display = "flex";
+    
+    /*if(contadora>=0){
+    }
+    else{
+      contadora=0;
+      proxima()
+    }*/
   }
 </script>
 

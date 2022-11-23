@@ -3,16 +3,17 @@
     <head>
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <link rel="shortcut icon" href="./Assets/carp-fish.png">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="./CSS/Quiz.CSS" />
       <title>Fish Friend</title>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js" ></script>
     </head>
     <body>
       <div class="header">
         <div class="container">
           <div class="logo">
-            <img src="./assets/carp-fish.png" alt="Logo do Fish Friend" />
+            <img src="./Assets/carp-fish.png" alt="Logo do Fish Friend" />
           </div>
           <div class="navbar">
             <ul>
@@ -66,6 +67,22 @@
                 <div class="p5">5°</div>
               </div> -->        
             </div>
+            <div class="lengendas">
+              <h2>Legendas - Meça seu conhecimento</h2>
+  
+              
+                <li><a>Zona Hadopelágica:</a>A camada mais profunda do mar, compreeendida entre os 6.000m de profundidade</li><br>
+
+                <li><a>Zona Abissopelágica:</a> A camada anterior a Hadal compreeendida entre os 4.000 m de profundidade </li><br>
+
+                <li><a>Zona Batipelágica:</a> Se estende da profundidade de 1000m a 4000m abaixo da superfície do oceano.</li><br>
+
+                <li><a>Zona Mesopelágica:</a> Se estende dos 200 aos 1.000 metros de profundidade abaixo da superfície do oceano</li> <br>
+
+                <li><a>Zona Epipelágica ou Superficial:</a> Vai até 200 m de profundidade e inclui a porção do mar onde pelo menos 1% da luz solar consegue penetrar,permitindo a fotossíntese.</li><br>
+  
+              
+            </div>
            </div>
         </div>
       </div>
@@ -83,7 +100,7 @@
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Zona Hadopelágica', 'Zona Abissopelágica', 'Zona Batipelágica', 'Zona Mesopelágica', 'Zona Epipelágica'],
+      labels: ['Zona Hadal', 'Zona Abissal', 'Zona Batial', 'Zona Mesopelágica', 'Zona Epipelágica'],
       datasets: [{
         label: 'Ranking oceânico',
         data: [12, 19, 3, 5, 2],
@@ -111,6 +128,7 @@
 
 Chart.defaults.font.size = 18;
 Chart.defaults.color= '#ffffff';
+
 let chart = new Chart(ctx, {
     type: 'line',
     data: data,
