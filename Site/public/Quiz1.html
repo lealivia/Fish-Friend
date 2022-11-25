@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./CSS/Quiz.CSS" />
+    <link rel="shortcut icon" href="./Assets/carp-fish.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fish Friend</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="./Assets/carp-fish.png" alt="Logo do Fish Friend" />
+        </div>
+        <div class="navbar">
+          <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Sobre.html">Sobre a Desenvolvedora</a></li>
+            <li><a href="Quiz.html">Quiz</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="banner">
+      <video autoplay loop class="background">
+        <source src="./Assets/BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
+      </video>
+      <div class="container">
+        <div class="caixas">
+<!--------------------------------------------------------------------------------------------------->
+          <div class="caixa" id="Quiz1">
+            <h2>Os tubarões possuem ossos?</h2>
+            <img
+              src="./Assets/Quiz/Tubarão Branco.jpg"
+              alt="imagem tubarão no oceano" id="img_tubarão" width="690px"
+            />
+            <div class="resposta" id="sel_Q">
+              <select name="Questão 1" id="sel_Q1" onchange="resposta1()">
+                <option value="">--Selecione--</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+              </select>
+              <div id="div_resposta"></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div class="exibir" id="div_exibir1"></div>
+            </div>
+          </div>
+<!--------------------------------------------------------------------------------------------------->
+
+          <div class="caixa" id="Quiz2">
+            <h2>Os peixes respiram pela boca?</h2>
+            <img
+              src="./Assets/Quiz/Peixe - boca aberta.jpg"
+              alt="imagem peixe com a boca aberta" width="610px"
+            />
+            <div class="resposta" id="sel_Q">
+              <select name="Questão 2" id="sel_Q2" onchange="resposta2()">
+                <option value="">--Selecione--</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+              </select>
+              <div id="div_resposta2" ></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div class="exibir" id="div_exibir2"></div>
+            </div>
+          </div>
+ <!-------------------------------------------------------------------------------------------------->
+
+          <div class="caixa" id="Quiz3">
+            <h2>As algas tem um papel importante no ecossistema?</h2>
+            <img
+              src="./Assets/Quiz/algas.jpg"
+              alt="imagem de algas marinhas" id="img_algas" width="590px"
+            />
+            <div class="resposta" id="sel_Q">
+              <select name="Questão 3" id="sel_Q3" onchange="resposta3()">
+                <option value="">--Selecione--</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+              </select>
+              <div id="div_resposta3"></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div class="exibir" id="div_exibir3"></div>
+            </div>
+          </div>
+
+<!--------------------------------------------------------------------------------------------------->          
+
+          <div class="caixa" id="Quiz4">
+            <h2>Quais outros nome podemos chamar as esponjas do mar?</h2>
+            <img
+              src="./Assets/Quiz/esponja do mar.jpg"
+              alt="imagem de esponjas do mar" id="img_esponjas" width="590px" height="400px"
+            />
+            <div class="resposta" id="sel_Q">
+              <select name="Questão 4" id="sel_Q4" onchange="resposta4()">
+                <option value="">--Selecione--</option>
+                <option value="1">Poríferos</option>
+                <option value="2">Buchas-do-Mar</option>
+              </select>
+              <div id="div_resposta4"></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div class="exibir" id="div_exibir4"></div>
+            </div>
+          </div>
+
+          <!--------------------------------------------------------------------------------------------------->       
+          <div class="caixa" id="Quiz5">
+            <h2>Quantos tipos de répteis marinhos são encontrados hoje?</h2>
+            <img
+              src="./Assets/Quiz/repteis-marinhos.jpg"
+              alt="imagem de uma tartaruga marinha" id="img_repteis" width="590px"
+            />
+            <div class="resposta" id="sel_Q">
+              <select name="Questão 5" id="sel_Q5" onchange="resposta5()">
+                <option value="">--Selecione--</option>
+                <option value="1">4</option>
+                <option value="2">2</option>
+              </select>
+              <div id="div_resposta5"></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div class="exibir" id="div_exibir5"></div>
+            </div>
+          </div>
+          <!--------------------------------------------------------------------------------------------------->
+          <div class="caixa" id="Quiz6">
+            <h2>É correto afirmar que existem mais de 7.000 espécies de equinodermos?</h2>
+            <img
+              src="./Assets/Quiz/ouriço-do-mar.jpg"
+              alt="imagem de um ouriço do mar" id="img_ouriço" width="590px" height="400px"
+            />
+            <div class="resposta" id="sel_Q">
+              <select name="Questão 6" id="sel_Q6" onchange="resposta6()">
+                <option value="">--Selecione--</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+              </select>
+              <div id="div_resposta6"></div>
+            </div>
+            <div class="explicar" id="explicar">
+              <div class="exibir" id="div_exibir6"></div>
+            </div>
+          </div>  
+<!--------------------------------------------------------------------------------------------------->
+            <div class="caixa" id="Quiz7">
+              <h2>A qual grupo pertence as águas-vivas?</h2>
+              <img
+                src="./Assets/Quiz/ouriço-do-mar.jpg"
+                alt="imagem de um ouriço do mar" id="img_ouriço" width="590px" height="400px"
+              />
+              <div class="resposta" id="sel_Q">
+                <select name="Questão 7" id="sel_Q7" onchange="resposta7()">
+                  <option value="">--Selecione--</option>
+                  <option value="1">Cnidários</option>
+                  <option value="2">poríferos</option>
+                </select>
+                <div id="div_resposta7"></div>
+              </div>
+              <div class="explicar" id="explicar">
+                <div class="exibir" id="div_exibir7"></div>
+              </div>
+            </div>  
+<!--------------------------------------------------------------------------------------------------->
+            <div class="caixa" id="Quiz8">
+              <h2>O polvo e a água-viva fazem parte da mesma família?</h2>
+              <img
+                src="./Assets/Quiz/baby-polvo.jpg"
+                alt="imagem de um polvo bebê" id="img_polvo-bebe" width="590px" height="400px"
+              />
+              <div class="resposta" id="sel_Q">
+                <select name="Questão 8" id="sel_Q8" onchange="resposta8()">
+                  <option value="">--Selecione--</option>
+                  <option value="1">Sim</option>
+                  <option value="2">Não</option>
+                </select>
+                <div id="div_resposta8"></div>
+              </div>
+              <div class="explicar" id="explicar">
+                <div class="exibir" id="div_exibir8"></div>
+              </div>
+            </div>  
+<!--------------------------------------------------------------------------------------------------->
+            <div class="caixa" id="Quiz9">
+              <h2>O que seria uma Holothuria sanctori?</h2>
+              <img
+                src="./Assets/Quiz/pepino do mar.jpg"
+                alt="imagem de um pepino do mar" id="img_pepino-do-mar" width="590px" height="400px"
+              />
+              <div class="resposta" id="sel_Q">
+                <select name="Questão 9" id="sel_Q9" onchange="resposta9()">
+                  <option value="">--Selecione--</option>
+                  <option value="1">Pepino do Mar</option>
+                  <option value="2">Lesma do Mar</option>
+                </select>
+                <div id="div_resposta9"></div>
+              </div>
+              <div class="explicar" id="explicar">
+                <div class="exibir" id="div_exibir9"></div>
+              </div>
+            </div>  
+<!--------------------------------------------------------------------------------------------------->
+            <div class="caixa" id="Quiz10">
+              <h2>Os vermes marinhos podem ser considerados primos das minhocas?</h2>
+              <img
+                src="./Assets/Quiz/verme marinho.jpg"
+                alt="imagem de um verme marinho" id="img_verme" width="590px" height="400px"
+              />
+              <div class="resposta" id="sel_Q" >
+                <select name="Questão 10" id="sel_Q10"  onchange="resposta10()">
+                  <option value="">--Selecione--</option>
+                  <option value="1">Sim</option>
+                  <option value="2">Não</option>
+                </select>
+                <div id="div_resposta10"></div>
+              </div>
+              <div class="explicar" id="explicar">
+                <div class="exibir" id="div_exibir10"></div>
+              </div>
+            </div>  
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <div class="caixa" id="Feed_Back">
+              <h2 style="text-align: center;">Antes de ver seus resultados, compartilhe como foi sua experiêcia realizando o Quiz e alguma sugestão do que você gostaria de ver por aqui</h2> <br><br>
+              <textarea name="comentario" id="txt_comentarios" cols="45" rows="10" style="width: 608px; height: 143px;"></textarea><br><br>
+              <button onclick="enviar()"> Enviar </button>
+            </div>     
+
+</div> 
+      </div>
+        <div class="container-button">
+          <button class="botao" onclick="proxima()">Próxima Questão</button>
+          <button class="botao" onclick="anterior()">Questão anterior</button>
+        </div>
+  </div>
+    <div class="footer">
+      <p>
+        Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
+        Desenvolvido por uma fanática em Biologia Marinha 🦀!
+      </p>
+    </div>
+  </body>
+</html>
+<script>
+
+
+  var acertos = 0
+  var pontos = 0
+ 
+  //-------------------------------------------------------------------------QUESTÃO 1----------------------------------------------------------------------------------
+  
+  function resposta1() {
+
+    var resposta1 = sel_Q1.value;
+    var exibir
+    var mensagem
+
+    if (resposta1 == "") {
+      mensagem = ``;
+      exibir = "";
+    }
+
+    if (resposta1 == 1) {
+      mensagem = `<span  style="color: #fffff" font-size="20px" opacity: 1>Incorreto!</span>`
+      acertos= acertos+2
+
+    } else if(resposta1 == 2) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+      
+    }
+
+    exibir = ` Os tubarões fazem parte da subclasse de peixes chamada elasmobrânquios,<br> que são peixes com esqueletos feitos de cartilagem no lugar de ossos.`;
+
+
+    div_resposta.innerHTML = mensagem
+    
+    div_exibir1.innerHTML = exibir
+  }
+
+//----------------------------------------------------------------------------QUESTÃO 2----------------------------------------------------------------------------------
+ 
+      function resposta2(){
+      var resposta2 = sel_Q2.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta2 == "") {
+        mensagem = ``;
+        exibir = ""
+      }
+
+    if (resposta2 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+      acertos= acertos+2
+
+    } else if (resposta2 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+    }
+
+    exibir = ` A água entra pela boca do peixe e vai até às guelras. Aí, o sangue recebe oxigênio.<br> Depois, expulsa dióxido de carbono pelos opérculos, que são na realidade os buracos que se encontram em cada lado da cabeça do peixe.`;
+
+    div_resposta2.innerHTML = mensagem;
+
+    div_exibir2.innerHTML = exibir;
+
+  }
+
+  //-----------------------------------------------------------------------------QUESTÃO 3------------------------------------------------------------------------------
+  function resposta3(){
+      var resposta3 = sel_Q3.value;
+      var exibir
+      var mensagem
+      
+    if (resposta3 == "") {
+        mensagem = ``;
+        exibir = ``;
+      }
+
+    if (resposta3 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+     acertos++
+    } else if (resposta3 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+    }
+
+    exibir = `São elas as responsáveis pela maior parcela de oxigênio liberado na atmosfera, uma vez que muitas espécies produzem muito mais do que realmente necessitam. Além da grande produção de oxigênio pelas algas, elas ocupam uma área muito maior que as árvores.`;
+
+    div_resposta3.innerHTML = mensagem;
+
+    div_exibir3.innerHTML = exibir;
+
+  }
+  
+  //---------------------------------------------------------------------------QUESTÃO 4---------------------------------------------------------------------------------
+
+  function resposta4(){
+      var resposta4 = sel_Q4.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta4 == "") {
+        mensagem = ``;
+        exibir = ``;
+      }
+
+    if (resposta4 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+      acertos= acertos+2
+
+    } else if (resposta4 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+    }
+
+    exibir = ` As esponjas do mar, também conhecidas como poríferos, são um grupo de animais que já era conhecido antes de Cristo. Na época, eram utilizadas não apenas para higiene, mas também para revestir o interior de armaduras de guerra.`;
+
+    div_resposta4.innerHTML = mensagem;
+
+    div_exibir4.innerHTML = exibir;
+
+  }
+  
+  //---------------------------------------------------------------------------------QUESTÃO 5-----------------------------------------------------------------------
+  function resposta5(){
+      var resposta5 = sel_Q5.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta5 == "") {
+        mensagem = ""
+        exibir = "";
+      }
+
+    if (resposta5 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+     acertos++
+    } else if (resposta5 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+    }
+
+    exibir =`Encontramos quatro tipos diferentes: tartarugas marinhas, iguanas marinhas, cobras marinhas e crocodilos de água salgada.`;
+
+    div_resposta5.innerHTML = mensagem;
+
+    div_exibir5.innerHTML = exibir;
+
+  }
+  //--------------------------------------------------------------------------------QUESTãO 6----------------------------------------------------------------------------
+  function resposta6(){
+      var resposta6 = sel_Q6.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta6 == "") {
+        mensagem = ``;
+        exibir = ``;
+      }
+
+    if (resposta6 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+     acertos++
+    } else if (resposta6 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+    }
+
+    exibir = `Eles são simétricos e possuem um sistema vascular específico. Chegando a existir mais de 7.000 espécies desses animais marinhos.`;
+
+    div_resposta6.innerHTML = mensagem;
+
+    div_exibir6.innerHTML = exibir;
+
+  }
+  //----------------------------------------------------------------------------QUESTÃO 7--------------------------------------------------------------------------------
+  function resposta7(){
+      var resposta7 = sel_Q7.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta7 == "") {
+        mensagem = ``;
+        exibir = ``;
+      }
+
+    if (resposta7 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+     acertos=acertos+2
+    } else if (resposta7 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+    }
+
+    exibir = `Existem mais de 10.000 cnidários, entre os quais agrupamos águas-vivas, corais e anêmonas.`;
+
+    div_resposta7.innerHTML = mensagem;
+
+    div_exibir7.innerHTML = exibir;
+
+  }
+
+//---------------------------------------------------------------------------QUESTÃO 8-----------------------------------------------------------------------------------
+function resposta8(){
+      var resposta8 = sel_Q8.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta8 == "") {
+        mensagem = ``;
+        exibir = ``;
+      }
+
+    if (resposta8 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Incorreto! </span>`;
+     acertos++
+    } else if (resposta8 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px"> Correto!</span>`;
+    }
+
+    exibir = `Ambas as espécies pertencem a famílias diferentes e, portanto, possuem características distintas. O polvo pertence ao filo Mollusca, enquanto a água-viva pertence ao filo Cnidaria.`;
+
+    div_resposta8.innerHTML = mensagem;
+
+    div_exibir8.innerHTML = exibir;
+
+  }
+  //--------------------------------------------------------------------------QUESTÃO 9----------------------------------------------------------------------------------
+  function resposta9(){
+      var resposta9 = sel_Q9.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta9 == "") {
+        mensagem = ``;
+        exibir = ``;
+      }
+
+    if (resposta9 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+      acertos=acertos+2
+     
+    } else if (resposta9 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+    }
+
+    exibir = `<br>Holothuria sanctori é uma espécie de pepino do mar do gênero Holothuria.`;
+
+    div_resposta9.innerHTML = mensagem;
+
+    div_exibir9.innerHTML = exibir;
+
+  }
+  //-----------------------------------------------------------------------------QUESTÃO 10------------------------------------------------------------------------------
+  function resposta10(){
+      var resposta10 = sel_Q10.value;
+      var exibir;
+      var mensagem
+      
+    if (resposta10 == "") {
+        mensagem = ``;
+        exibir = ``;
+      }
+
+    if (resposta10 == 1) {
+      mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
+     acertos++
+    } else if (resposta10 == 2){
+      mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+    }
+
+    exibir = ` Esses vermes marinhos que você vê nas fotos são ‘primos’ das minhocas e são extremamente diversos em cores, formas corporais, estratégias para capturar alimento e na forma em que se reproduzem.`;
+
+    div_resposta10.innerHTML = mensagem;
+
+    div_exibir10.innerHTML = exibir;
+
+  }
+
+  /* ----------------------------------------------------------Função Quiz transição de imagens -----------------------------------------------------------------------*/
+
+
+  Quiz1.style.display = "flex";
+  Quiz2.style.display = "none";
+  Quiz3.style.display="none"
+  
+  var contadora = 0;
+  var divs= document.querySelectorAll('.caixa')
+
+  
+  function proxima(){
+    contadora++ ;
+    if(contadora<divs.length){
+    divs[contadora-1].style.display = "none";
+    divs[contadora].style.display = "flex";
+    }
+    else{
+      divs[divs.length-1].style.display = "none"
+      contadora=0;
+      divs[contadora].style.display = "flex";
+    }
+  }
+  
+  function anterior(){
+    contadora--;
+    if(contadora>0){
+    divs[contadora+1].style.display ="none";
+    divs[contadora].style.display = "flex";
+    }
+    else{
+      contadora=0;
+      divs[contadora+1].style.display ="none";
+      divs[contadora].style.display = "flex";
+      
+    }
+  }
+
+
+  function enviar(){
+    var UX = txt_comentarios.value
+
+    if(UX != ""){
+      alert(`Obrigado por seu comentário!`)
+      
+      setTimeout(() => {
+        window.location="Quiz.html"
+      }, 500);
+    }
+
+  }
+</script>
+
+

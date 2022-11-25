@@ -30,7 +30,7 @@
             src="./Assets/BackGround/Embaixo Da Agua - 26830.mp4"
             type="video/mp4" />
         </video>
-        <div class="container">
+     <div class="container">
         <div class="info-Home">
           <h2>Conheça o Fish Friend!</h2>
           <p>Uma plataforma destinada aqueles que gostam da vida aquática e querem testar seu conhecimento sobre.<br><br>
@@ -39,52 +39,59 @@
            Mas antes de tudo realize seu <a href="./Cadastro.html">cadastro</a> para poder começar sua expedição.
            <br></p>
           </div>
-        </div>
-        <div class="container-Slider">
-          <div class="slideshow-container">
-        
-            <div class="mySlides fade">
-              <img src="./Assets/Carrossel/imagem 1 .jpg" style="width:500px">
-              <div class="text">Caption Text</div>
-            </div>
-            
-            <div class="mySlides fade">
-              <img src="./Assets/Carrossel/imagem 2 .jpg" style="width:500px">
-              <div class="text">Caption Two</div>
-            </div>
-            
-            <div class="mySlides fade">             
-               <img src="./Assets/Carrossel/imagem 3.jpg" style="width:500px">
-              <div class="text">Caption Three</div>
-            </div>
-
-            <div class="mySlides fade">
-              <img src="./Assets/Carrossel/imagem 4.jpg" style="width:500px">
-          <div class="text">Caption Three</div>
-
-            </div><div class="mySlides fade">
-              <img src="./Assets/Carrossel/imagem 5.jpg" style="width:500px">
-           <div class="text">Caption Three</div>
-
-            </div><div class="mySlides fade">        
-            <img src="./Assets/Carrossel/imagem 6.jpg" style="width:500px">
-            <div class="text">Caption Three</div>
-          </div>
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
-            
+          <div class="container-Slider">
+            <div class="slideshow-container">
+              <h2>Conheça algumas espécies:</h2>
+              <div class="mySlides fade">
+                <div class="text">Talápia do Nilo</div>
+                <img src="./Assets/Carrossel/imagem 1 .jpg" style="width:500px">
+              </div>
+              
+              <div class="mySlides fade">
+                <div class="text">Peixe-joia-Dourado</div>
+                <img src="./Assets/Carrossel/imagem 2 .jpg" style="width:500px">
+              </div>
+              
+              <div class="mySlides fade">             
+                <div class="text">Borboleta-Bicuda</div>
+                <img src="./Assets/Carrossel/imagem 3.jpg" style="width:500px">
+              </div>
+              
+              <div class="mySlides fade">
+                <div class="text">Cardume de Talápia do Nilo</div>
+                <img src="./Assets/Carrossel/imagem 4.jpg" style="width:500px">
+                
+              </div><div class="mySlides fade">
+                <div class="text">Bodião-de-Barra-Branca</div>
+                <img src="./Assets/Carrossel/imagem 5.jpg" style="width:500px">
+                
+              </div><div class="mySlides fade">        
+                <div class="text">Coelho do Mar</div>
+                <img src="./Assets/Carrossel/imagem 6.jpg" style="width:500px">
+              </div>
+              <a class="prev" onclick="plusSlides(-1)">❮</a>
+              <a class="next" onclick="plusSlides(1)">❯</a>
+              
             </div>
             <br>
-                
-    </div>
-        <div class="container-Sorteio">
-          <div class="titulo">
-          <h2>Sorteie qual animal marinho você é!</h2>
-        </div>
-          <div class="caixa">
-            <img src="" id="imagem" width="290px" alt="">
-            <div id="div_sorteio"></div>
-            <button onclick="sorteio()">Sorteie aqui!</button>
+            <div style="text-align:center; display:flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+              <span class="dot" onclick="currentSlide(4)"></span> 
+              <span class="dot" onclick="currentSlide(5)"></span> 
+              <span class="dot" onclick="currentSlide(6)"></span> 
+            </div>
+          </div>   
+          <div class="container-Sorteio">
+            <div class="titulo">
+              <h2>Sorteie qual animal marinho você é!</h2>
+            </div>
+            <div class="caixa">
+              <img src="" id="imagem" width="260px" alt="">
+              <div id="div_sorteio"></div>
+              <button onclick="sorteio()">Sorteie aqui!</button>
+            </div>
           </div>
         </div>
     </div>
@@ -100,8 +107,6 @@
 <script>
 
   var animais = [
-    {nome:"CARANGUEJO",
-    img:"./Assets/sortear/Caranguejo.jpg"},
     {nome:"ORCA",
     img: "./Assets/sortear/Orca.jpg"},
     {nome:"TUBARÃO MARTELO" ,
@@ -111,19 +116,19 @@
     {nome:"AXOLOTE" ,
     img: "./Assets/sortear/Axolote.jpg"},  
     {nome:"BAIACU" ,
-    img: "./Assets/sortear/Baiacu.jpg"}, 
+    img: "./Assets/sortear/baiacu.jpg"}, 
     {nome:"BALEIA JUBARTE" ,
-    img: "./Assets/sortear/Baleia jubarte.jpg"},    
+    img: "./Assets/sortear/Baleia Jubarte.jpg"},    
     {nome:"BELUGA" ,
     img: "./Assets/sortear/Beluga.jpg"},    
     {nome:"FOCA" ,
     img: "./Assets/sortear/foca.jpg"},    
     {nome:"GOLFINHO" ,
-    img: "./Assets/sortear/Golfinho.jpg"},
+    img: "./Assets/sortear/golfinho.jpg"},
     {nome:"MOREIA" ,
     img: "./Assets/sortear/Moreia.jpg"},
     {nome:"PEIXE PALHAÇO" ,
-    img: "./Assets/sortear/Peixe Palhaço.jpg"},
+    img: "./Assets/sortear/Peixe palhaço.jpg"},
     {nome:"POLVO" ,
     img: "./Assets/sortear/Polvo.jpg"},
     {nome:"RAIA" ,
@@ -137,10 +142,10 @@
   ]
 
   function sorteio(){
-    var sorte = parseInt(1+Math.random()*17)
+    var sorte = parseInt(1+Math.random()*16)
 
     imagem.src=animais[sorte].img
-    div_sorteio.src=animais[sorte].nome
+    div_sorteio.innerHTML=animais[sorte].nome
 
   }
 
