@@ -1,0 +1,265 @@
+* { margin: 0; padding: 0; }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+body::-webkit-scrollbar{
+  width: 1vh;}
+
+body::-webkit-scrollbar-track{
+background-color: #ffff;
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: #79d3f6ff;
+  border-radius: 6vh;
+  }
+body {
+  padding: 0;
+  margin: 0;
+  height: 100px;
+}
+
+.header{
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+}
+
+.header .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.container .logo img {
+  width: 90px;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 30px;
+}
+
+ .container .navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 3%;
+  border-radius: 5px;
+}
+
+.navbar a{
+text-decoration: none;
+color: #ffff;
+}
+
+
+.navbar ul {
+  display: flex;
+  width: 700px;
+  justify-content: space-evenly;
+  list-style: none;
+  color: #ffff;
+}
+
+.navbar ul li {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+li :hover {
+  color: #f47b2a;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  margin-top: 5%;
+  width: 100%;
+  justify-content: center;
+}
+
+
+.banner video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+}
+
+.banner .container_formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+
+.formulario {
+  width: 700px;
+  height: 400px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #79d3f67a;
+  border-radius: 30px;
+  margin-bottom: 9%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formulario1{
+  width: 680px;
+  height: 580px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #79d3f67a;
+  border-radius: 30px;
+  margin-bottom: 9%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formulario h1 {
+  display: flex;
+  flex-direction: column;
+  color: #ffff;
+  margin-bottom: 0px;
+  font-size: 25px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formulario1 h1 {
+  display: flex;
+  flex-direction: column;
+  color: #ffff;
+  margin-bottom: 0px;
+  font-size: 25px;
+  font-family: 'Poppins', sans-serif;
+}
+.caixa {
+  display: flex;
+  margin-right: 30px;
+  flex-direction: column;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.campo input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #ffff;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.campo label {
+  color: rgb(255, 255, 255);
+  margin: 15px 0px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.formulario button {
+  margin-top: 5%;
+  width: 100px;
+  background-color: #f47b2a;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ffff;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formulario1 button {
+  margin-top: 5%;
+  width: 100px;
+  background-color: #f47b2a;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ffff;
+  align-items: center;
+  justify-content: center;
+  
+}
+.imagem_formulario .campo img {
+  width: 340px;
+  height: 350px;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.loading-div {
+    position: absolute;
+    top: 520px;
+    width: 50px;
+    margin: auto;
+    display: block;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+  }
+    
+
+.footer {
+    height: 20px;
+    padding: 30px 0px;
+    color: #ffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+  
+  }
+  
+  .footer ul{
+      display: flex;
+      justify-content: space-between;
+      width: 40%;
+  }
+  
+  li{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+  }
+  
+  p{
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+  }
+  

@@ -218,6 +218,21 @@ li :hover {
   flex-direction: column-reverse;
 }
 
+
+.loading-div {
+  position: absolute;
+  top: 695px;
+  width: 50px;
+  margin: auto;
+  display: block;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+
 .footer {
   height: 20px;
   padding: 30px 0px;

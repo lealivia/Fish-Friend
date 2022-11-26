@@ -1,53 +1,58 @@
- <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <link rel="shortcut icon" href="./Assets/carp-fish.png">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="./CSS/Quiz.CSS" />
-      <title>Fish Friend</title>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js" ></script>
-    </head>
-    <body>
-      <div class="header">
-        <div class="container">
-          <div class="logo">
-            <img src="./Assets/carp-fish.png" alt="Logo do Fish Friend" />
-          </div>
-          <div class="navbar">
-            <ul>
-              <li><a href="Index.html">Home</a></li>
-              <li><a href="Quiz1.html">Quiz</a></li>
-              <li><a href="Login.HTML">Deslogar</a></li>
-            </ul>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="./Assets/carp-fish.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/Quiz.CSS" />
+    <title>Fish Friend</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body onload="obterAcertos()">
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="./Assets/carp-fish.png" alt="Logo do Fish Friend" />
+        </div>
+        <div class="navbar">
+          <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Quiz1.html">Quiz</a></li>
+            <li><a href="Login.HTML">Deslogar</a></li>
+          </ul>
         </div>
       </div>
-      <div class="banner">
-        <video autoplay loop class="background">
-          <source src="./Assets/BackGround/Embaixo Da Agua - 26830.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="info-Sobre">
-            <h2> Fish Quiz</h2><br> <br>
-            <p> Aqui você começa sua jornada de descobrimento!
-              E por que não tornar isso mais interessante? <br>  
-              Você pode medir a sua evolução atráves do nosso Ranking oceânico. 
-  <br><br>
+    </div>
+    <div class="banner">
+      <video autoplay loop class="background">
+        <source
+          src="./Assets/BackGround/Embaixo Da Agua - 26830.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="container">
+        <div class="info-Sobre">
+          <h2>Fish Quiz</h2>
+          <br />
+          <br />
+          <p>
+            Aqui você começa sua jornada de descobrimento! E por que não tornar
+            isso mais interessante? <br />
+            Você pode medir a sua evolução atráves do nosso Ranking oceânico.
+            <br /><br />
 
-
-              <a href="Quiz1.html">Vamos para o Fish Quiz!</a>
-  <br>
-  <br><br>
-            </p>
-           </div>
-           <div class="container-rank">
-            <div class="ranking">
-              <div>
-                <canvas id="myChart"></canvas>
-              </div>
-              <!--<h2>Ranking oceânico</h2>
+            <a href="Quiz1.html">Vamos para o Fish Quiz!</a>
+            <br />
+            <br /><br />
+          </p>
+        </div>
+        <div class="container-rank">
+          <div class="ranking">
+            <div>
+              <canvas id="myChart"></canvas>
+            </div>
+            <!--<h2>Ranking oceânico</h2>
             
               <p>Zona Hadopelágica</p>
               <div class=".container-rank">
@@ -68,87 +73,118 @@
               <p>Zona Epipelágica</p>
               <div class=".container-rank">
                 <div class="p5">5°</div>
-              </div> -->        
-            </div>
-            <div class="lengendas">
-              <h2>Legendas - Meça seu conhecimento</h2>
-  
-              
-                <li><a>Zona Hadopelágica:</a>A camada mais profunda do mar, compreeendida entre os 6.000m de profundidade</li><br>
+              </div> -->
+          </div>
+          <div class="lengendas">
+            <h2>Legendas - Meça seu conhecimento</h2>
 
-                <li><a>Zona Abissopelágica:</a> A camada anterior a Hadal compreeendida entre os 4.000 m de profundidade </li><br>
+            <li>
+              <a>Zona Hadopelágica:</a>A camada mais profunda do mar,
+              compreeendida entre os 6.000m de profundidade
+            </li>
+            <br />
 
-                <li><a>Zona Batipelágica:</a> Se estende da profundidade de 1000m a 4000m abaixo da superfície do oceano.</li><br>
+            <li>
+              <a>Zona Abissopelágica:</a> A camada anterior a Hadal
+              compreeendida entre os 4.000 m de profundidade
+            </li>
+            <br />
 
-                <li><a>Zona Mesopelágica:</a> Se estende dos 200 aos 1.000 metros de profundidade abaixo da superfície do oceano</li> <br>
+            <li>
+              <a>Zona Batipelágica:</a> Se estende da profundidade de 1000m a
+              4000m abaixo da superfície do oceano.
+            </li>
+            <br />
 
-                <li><a>Zona Epipelágica ou Superficial:</a> Vai até 200 m de profundidade e inclui a porção do mar onde pelo menos 1% da luz solar consegue penetrar,permitindo a fotossíntese.</li><br>
-            </div>
-           </div>
+            <li>
+              <a>Zona Mesopelágica:</a> Se estende dos 200 aos 1.000 metros de
+              profundidade abaixo da superfície do oceano
+            </li>
+            <br />
+
+            <li>
+              <a>Zona Epipelágica ou Superficial:</a> Vai até 200 m de
+              profundidade e inclui a porção do mar onde pelo menos 1% da luz
+              solar consegue penetrar,permitindo a fotossíntese.
+            </li>
+            <br />
+          </div>
         </div>
       </div>
+    </div>
     <div class="footer">
-        <p>
-          Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
-          Desenvolvido por uma fanática em Biologia Marinha 🦀! 
-        </p>
-      </div>
-    </body>
+      <p>
+        Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
+        Desenvolvido por uma fanática em Biologia Marinha 🦀!
+      </p>
+    </div>
+  </body>
 </html>
-<script>  
-  const ctx = document.getElementById('myChart');
+<script>
+  var idUsuario = sessionStorage.ID_USUARIO;
+  var acertos = sessionStorage.QUANTIDADE_ACERTOS;
+  var erros = sessionStorage.QUANTIDADE_ERROS;
+  var pontuacao = sessionStorage.QUANTIDADE_PONTUACAO;
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Zona Hadal', 'Zona Abissal', 'Zona Batial', 'Zona Mesopelágica', 'Zona Epipelágica'],
-      datasets: [{
-        label: 'Ranking oceânico',
-        data: [12, 19, 3, 5, 2],
-        borderWidth: 1,
-        backgroundColor:'#f47b2a'
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks:{
-            color:'#ffffff'
-          }
+  function obterAcertos() {
+    fetch(`/usuarios/obterAcertos/${idUsuario}`, { cache: "no-store" })
+      .then(function (response) {
+        if (response.ok) {
+          response.json().then(function (resposta) {
+            plotarGrafico(resposta);
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+        );
+      });
+  }
+
+  function plotarGrafico(resposta) {
+    const ctx = document.getElementById("myChart");
+
+    const data = [];
+    for (let i = 0; i < resposta.length; i++) {
+      data.push(resposta[i].acerto);
+    }
+
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: data,
+        datasets: [
+          {
+            label: "Ranking oceânico",
+            data: data,
+            borderWidth: 1,
+            backgroundColor: "#f47b2a",
+          },
+        ],
+      },
+      options: {
+        indexAxis: "x",
+        scales: {
+          x: {
+            beginAtZero: true,
+            ticks: {
+              color: "#ffffff",
+            },
+          },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: "#ffffff",
+            },
+          },
         },
-        x:{
-          ticks:{
-            color:'#ffffff'
-          }
-        }
-      }
-    }
-  });
+      },
+    });
 
-Chart.defaults.font.size = 18;
-Chart.defaults.color= '#ffffff';
-
-let chart = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: {
-        plugins: {
-            legend: {
-                labels: {
-                    // This more specific font property overrides the global property
-                    font: {
-                        size: 17,
-                    }
-
-                }
-            }
-        }
-    }
-});
-
-
+    Chart.defaults.font.size = 18;
+    Chart.defaults.color = "#ffffff";
+  }
 </script>
-    
-    

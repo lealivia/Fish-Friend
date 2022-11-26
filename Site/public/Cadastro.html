@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="./CSS/Cadastro_Login.CSS" />
+    <link rel="stylesheet" href="./CSS/Cadastro.CSS" />
   <link rel="shortcut icon" href="./Assets/carp-fish.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fish Friend</title>
+    <script src="./js/funcoes.js"></script>
   </head>
   <body>
     <div class="header">
@@ -35,7 +36,6 @@
                   <label for="nome">Nome:</label>
                   <input type="text" id="in_nome"/>
                 </div>
-              
                 <div class="campo">
                 <label for="email">E-mail:</label>
                 <input type="text" placeholder="E-mail@gmail.com" id="in_email" />
@@ -49,7 +49,11 @@
                 <input type="password" placeholder="********" id="in_confirmacao" />
               </div>
               <div id="exibir"></div>
-              <button onclick="entrar()">Entrar</button>
+
+              <button onclick="cadastrar()">Cadastrar</button> <br>
+              <div id="div_aguardar" class="loading-div">
+                <img src="./Assets/giphy.gif" width="70" height="70"  id="loading-gif" style="border-radius:300px;"></img>
+            </div>
             </div>
             <div class="imagem_formulario">
               <div class="campo">
@@ -70,17 +74,60 @@
   </body>
 </html>
 <script>
-   function entrar(){
-    var email = in_email.value
-    var senha = in_senha.value
-    var confirmaçao = in_confirmacao.value
+  function cadastrar() {
+        aguardar();
 
-    if(email==""|| senha ==""|| confirmaçao ==""){
-      alert("Erro! Preencha todos os campos")
-    }else {
-      setTimeout(() => {
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = in_nome.value;
+        var emailVar = in_email.value;
+        var senhaVar = in_senha.value;
+        var confirmacaoSenhaVar = in_confirmacao.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+
+            finalizarAguardar();
+            return false;
+        } 
+        
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                setTimeout(() => {
                     window.location = "login.html";
-                }, "1000")
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
     }
-  }
+
+    
+
 </script>

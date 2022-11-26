@@ -251,8 +251,9 @@
 
 
   var acertos = 0
-  var pontos = 0
- 
+  var erros = 0
+  var pontuacao = 0
+
   //-------------------------------------------------------------------------QUESTÃO 1----------------------------------------------------------------------------------
   
   function resposta1() {
@@ -268,11 +269,12 @@
 
     if (resposta1 == 1) {
       mensagem = `<span  style="color: #fffff" font-size="20px" opacity: 1>Incorreto!</span>`
-      acertos= acertos+2
+      acertos++
+      pontuacao+= 2
 
     } else if(resposta1 == 2) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
-      
+      erros++
     }
 
     exibir = ` Os tubarões fazem parte da subclasse de peixes chamada elasmobrânquios,<br> que são peixes com esqueletos feitos de cartilagem no lugar de ossos.`;
@@ -284,7 +286,7 @@
   }
 
 //----------------------------------------------------------------------------QUESTÃO 2----------------------------------------------------------------------------------
- 
+
       function resposta2(){
       var resposta2 = sel_Q2.value;
       var exibir;
@@ -297,10 +299,11 @@
 
     if (resposta2 == 1) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
-      acertos= acertos+2
-
+      acertos++
+      pontuacao+= 2
     } else if (resposta2 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+      erros++
     }
 
     exibir = ` A água entra pela boca do peixe e vai até às guelras. Aí, o sangue recebe oxigênio.<br> Depois, expulsa dióxido de carbono pelos opérculos, que são na realidade os buracos que se encontram em cada lado da cabeça do peixe.`;
@@ -308,7 +311,7 @@
     div_resposta2.innerHTML = mensagem;
 
     div_exibir2.innerHTML = exibir;
-
+    
   }
 
   //-----------------------------------------------------------------------------QUESTÃO 3------------------------------------------------------------------------------
@@ -325,8 +328,11 @@
     if (resposta3 == 1) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
      acertos++
+     pontuacao+= 1
+
     } else if (resposta3 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+      erros++
     }
 
     exibir = `São elas as responsáveis pela maior parcela de oxigênio liberado na atmosfera, uma vez que muitas espécies produzem muito mais do que realmente necessitam. Além da grande produção de oxigênio pelas algas, elas ocupam uma área muito maior que as árvores.`;
@@ -338,7 +344,7 @@
   }
   
   //---------------------------------------------------------------------------QUESTÃO 4---------------------------------------------------------------------------------
-
+  
   function resposta4(){
       var resposta4 = sel_Q4.value;
       var exibir;
@@ -351,44 +357,48 @@
 
     if (resposta4 == 1) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
-      acertos= acertos+2
-
+      acertos++
+      pontuacao+= 1
+      
     } else if (resposta4 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+      erros++
     }
 
     exibir = ` As esponjas do mar, também conhecidas como poríferos, são um grupo de animais que já era conhecido antes de Cristo. Na época, eram utilizadas não apenas para higiene, mas também para revestir o interior de armaduras de guerra.`;
 
     div_resposta4.innerHTML = mensagem;
-
+    
     div_exibir4.innerHTML = exibir;
-
+    
   }
   
   //---------------------------------------------------------------------------------QUESTÃO 5-----------------------------------------------------------------------
   function resposta5(){
-      var resposta5 = sel_Q5.value;
-      var exibir;
-      var mensagem
-      
+    var resposta5 = sel_Q5.value;
+    var exibir;
+    var mensagem
+    
     if (resposta5 == "") {
-        mensagem = ""
-        exibir = "";
-      }
-
+      mensagem = ""
+      exibir = "";
+    }
+    
     if (resposta5 == 1) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
-     acertos++
+      acertos++
+      pontuacao+= 1
     } else if (resposta5 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+    erros++
     }
-
+    
     exibir =`Encontramos quatro tipos diferentes: tartarugas marinhas, iguanas marinhas, cobras marinhas e crocodilos de água salgada.`;
-
+    
     div_resposta5.innerHTML = mensagem;
-
+    
     div_exibir5.innerHTML = exibir;
-
+    
   }
   //--------------------------------------------------------------------------------QUESTãO 6----------------------------------------------------------------------------
   function resposta6(){
@@ -396,16 +406,19 @@
       var exibir;
       var mensagem
       
-    if (resposta6 == "") {
+      if (resposta6 == "") {
         mensagem = ``;
         exibir = ``;
       }
 
-    if (resposta6 == 1) {
+      if (resposta6 == 1) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
      acertos++
+     pontuacao+= 1
+
     } else if (resposta6 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+     erros++
     }
 
     exibir = `Eles são simétricos e possuem um sistema vascular específico. Chegando a existir mais de 7.000 espécies desses animais marinhos.`;
@@ -426,17 +439,20 @@
         exibir = ``;
       }
 
-    if (resposta7 == 1) {
+      if (resposta7 == 1) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
-     acertos=acertos+2
+     acertos++
+     
+     pontuacao+= 2
     } else if (resposta7 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+      erros=erros+2
     }
-
+    
     exibir = `Existem mais de 10.000 cnidários, entre os quais agrupamos águas-vivas, corais e anêmonas.`;
 
     div_resposta7.innerHTML = mensagem;
-
+    
     div_exibir7.innerHTML = exibir;
 
   }
@@ -455,8 +471,11 @@ function resposta8(){
     if (resposta8 == 1) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Incorreto! </span>`;
      acertos++
+     pontuacao+= 1
+
     } else if (resposta8 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px"> Correto!</span>`;
+    erros++
     }
 
     exibir = `Ambas as espécies pertencem a famílias diferentes e, portanto, possuem características distintas. O polvo pertence ao filo Mollusca, enquanto a água-viva pertence ao filo Cnidaria.`;
@@ -464,7 +483,7 @@ function resposta8(){
     div_resposta8.innerHTML = mensagem;
 
     div_exibir8.innerHTML = exibir;
-
+    
   }
   //--------------------------------------------------------------------------QUESTÃO 9----------------------------------------------------------------------------------
   function resposta9(){
@@ -479,10 +498,12 @@ function resposta8(){
 
     if (resposta9 == 1) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
-      acertos=acertos+2
+      acertos++
+      pontuacao+= 2
      
     } else if (resposta9 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+      erros+=2
     }
 
     exibir = `<br>Holothuria sanctori é uma espécie de pepino do mar do gênero Holothuria.`;
@@ -506,8 +527,10 @@ function resposta8(){
     if (resposta10 == 1) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Correto! </span>`;
      acertos++
+     pontuacao+= 2
     } else if (resposta10 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
+     erros++
     }
 
     exibir = ` Esses vermes marinhos que você vê nas fotos são ‘primos’ das minhocas e são extremamente diversos em cores, formas corporais, estratégias para capturar alimento e na forma em que se reproduzem.`;
@@ -515,11 +538,12 @@ function resposta8(){
     div_resposta10.innerHTML = mensagem;
 
     div_exibir10.innerHTML = exibir;
-
+    
   }
-
+  
   /* ----------------------------------------------------------Função Quiz transição de imagens -----------------------------------------------------------------------*/
-
+  
+  var pontos = acertos - erros
 
   Quiz1.style.display = "flex";
   Quiz2.style.display = "none";
@@ -532,9 +556,9 @@ function resposta8(){
   function proxima(){
     contadora++ ;
     if(contadora<divs.length){
-    divs[contadora-1].style.display = "none";
+      divs[contadora-1].style.display = "none";
     divs[contadora].style.display = "flex";
-    }
+  }
     else{
       divs[divs.length-1].style.display = "none"
       contadora=0;
@@ -564,11 +588,51 @@ function resposta8(){
       alert(`Obrigado por seu comentário!`)
       
       setTimeout(() => {
-        window.location="Quiz.html"
-      }, 500);
+      gravarPontuacao()
+    }, 1000);
+
+    }
+  }
+
+  function gravarPontuacao() {
+      
+        // Enviando o valor da nova input
+        fetch("/usuarios/gravarPontuacao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                pontuacao,
+                acertos,
+                erros,
+                fkUsuario:sessionStorage.ID_USUARIO
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                setTimeout(() => {
+                    window.location = "Quiz.html";
+                }, 1000)
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
     }
 
-  }
+
+
 </script>
 
 

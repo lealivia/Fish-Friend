@@ -11,10 +11,18 @@ router.get("/listar", function (req, res) {
     usuarioController.listar(req, res);
 });
 
+router.get("/obterAcertos/:idUsuario", function (req, res) {
+    usuarioController.obterAcertos(req, res);
+});
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
 })
+
+router.post("/gravarPontuacao", function (req, res) {
+    usuarioController.gravarPontuacao(req, res);
+})
+
 
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);

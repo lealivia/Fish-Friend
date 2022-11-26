@@ -24,6 +24,29 @@ function listar(req, res) {
         );
 }
 
+function obterAcertos(req, res) {
+    var idUsuario = req.params.idUsuario
+
+    if(idUsuario == undefined){
+        res.status(400).send("Seu idUsuario não está definido!")
+    }
+
+    usuarioModel.obterAcertos(idUsuario)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 function entrar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -94,9 +117,48 @@ function cadastrar(req, res) {
     }
 }
 
+function gravarPontuacao(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo Quiz1.html
+    var acertos = req.body.acertos;
+    var erros = req.body.erros;
+    var pontuacao = req.body.pontuacao;
+    var fkUsuario = req.body.fkUsuario;
+
+    // Faça as validações dos valores
+    if (acertos == undefined) {
+        res.status(400).send("Seu acertos está undefined!");
+    } else if (erros == undefined) {
+        res.status(400).send("Seu erros está undefined!");
+    } else if (pontuacao == undefined) {
+        res.status(400).send("Sua pontuacao está undefined!");
+    }else if (fkUsuario == undefined) {
+        res.status(400).send("Sua fkUsuario está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.gravarPontuacao(acertos, erros, pontuacao, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o Quiz1! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    gravarPontuacao,
+    obterAcertos
 }

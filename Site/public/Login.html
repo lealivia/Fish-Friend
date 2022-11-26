@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="./CSS/Cadastro_Login.CSS"/>
+    <link rel="stylesheet" href="./CSS/login.CSS"/>
     <link rel="shortcut icon" href="./Assets/carp-fish.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fish Friend</title>
+    <script src="./js/funcoes.js"></script>
   </head>
   <body>
     <div class="header">
@@ -42,6 +43,9 @@
             </div>
             <div id="exibir"></div>
             <button onclick="entrar()">Entrar</button>
+            <div id="div_aguardar" class="loading-div">
+              <img src="./Assets/giphy.gif" width="60" height="60"  id="loading-gif" style="border-radius:300px;"></img>
+          </div>
           </div>
           <div class="imagem_formulario">
             <div class="campo">
@@ -51,8 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="footer">
-     
+    <div class="footer">  
       <p>
         Fish Friend - &copy; copyright 2022. Todos os direitos reservados.
         Desenvolvido por uma fanática em Biologia Marinha 🦀! 
@@ -61,16 +64,68 @@
   </body>
 </html>
 <script>
-  function entrar(){
-    var email = in_email.value
-    var senha = in_senha.value
+  function entrar() {
+       // aguardar();
 
-    if(email== "" || senha == ""){
-    alert("Preencha todos os campos!")
-    }else {
-      setTimeout(() => {
-                 window.location = "Quiz.html";
-      }, "1000");
+        var emailVar = in_email.value;
+        var senhaVar = in_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+          cardErro.style.display = "block"
+            finalizarAguardar();
+            return false;
+        }
+        
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    setTimeout(function () {
+                        window.location = "Quiz.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
-  }
+
+   
+
 </script>
