@@ -152,7 +152,7 @@
             <div class="caixa" id="Quiz7">
               <h2>A qual grupo pertence as águas-vivas?</h2>
               <img
-                src="./Assets/Quiz/ouriço-do-mar.jpg"
+                src="./Assets/Quiz/agua-viva.jpg"
                 alt="imagem de um ouriço do mar" id="img_ouriço" width="590px" height="400px"
               />
               <div class="resposta" id="sel_Q">
@@ -446,7 +446,7 @@
      pontuacao+= 2
     } else if (resposta7 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
-      erros=erros+2
+      erros++
     }
     
     exibir = `Existem mais de 10.000 cnidários, entre os quais agrupamos águas-vivas, corais e anêmonas.`;
@@ -470,12 +470,12 @@ function resposta8(){
 
     if (resposta8 == 1) {
       mensagem = `<span style="color: #fffff" font-size="20px"> Incorreto! </span>`;
-     acertos++
-     pontuacao+= 1
-
+      erros++
+      
     } else if (resposta8 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px"> Correto!</span>`;
-    erros++
+      acertos++
+      pontuacao+= 1
     }
 
     exibir = `Ambas as espécies pertencem a famílias diferentes e, portanto, possuem características distintas. O polvo pertence ao filo Mollusca, enquanto a água-viva pertence ao filo Cnidaria.`;
@@ -503,7 +503,7 @@ function resposta8(){
      
     } else if (resposta9 == 2){
       mensagem =`<span style="color: #fffff" font-size="20px">Incorreto!</span>`;
-      erros+=2
+      erros++
     }
 
     exibir = `<br>Holothuria sanctori é uma espécie de pepino do mar do gênero Holothuria.`;
@@ -543,7 +543,6 @@ function resposta8(){
   
   /* ----------------------------------------------------------Função Quiz transição de imagens -----------------------------------------------------------------------*/
   
-  var pontos = acertos - erros
 
   Quiz1.style.display = "flex";
   Quiz2.style.display = "none";
@@ -579,21 +578,7 @@ function resposta8(){
       
     }
   }
-
-
-  function enviar(){
-    var UX = txt_comentarios.value
-
-    if(UX != ""){
-      alert(`Obrigado por seu comentário!`)
-      
-      setTimeout(() => {
-      gravarPontuacao()
-    }, 1000);
-
-    }
-  }
-
+  
   function gravarPontuacao() {
       
         // Enviando o valor da nova input
@@ -614,8 +599,8 @@ function resposta8(){
 
             if (resposta.ok) {
 
-                setTimeout(() => {
-                    window.location = "Quiz.html";
+              setTimeout(() => {
+                    window.location = enviar();
                 }, 1000)
                 
                 limparFormulario();
@@ -631,6 +616,64 @@ function resposta8(){
         return false;
     }
 
+        
+    function enviar(){
+      var comentario = txt_comentarios.value
+    
+    const hoje = new Date()
+    const dia = hoje.getDate().toString().padStart(2,'0') 
+    const mes = String(hoje.getMonth() + 1).padStart(2,'0') 
+    const ano = hoje.getFullYear()
+    const dataAtual = `${ano}/${mes}/${dia}` 
+    var idUsuario= sessionStorage.ID_USUARIO
+
+    console.log(`Data:${dataAtual}`)
+
+    if(comentario != ""){
+      alert(`Obrigado por seu comentário!`)
+    fetch(`/usuarios/enviar/${idUsuario}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                comentarioServer: comentario,
+                dataAtual
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                setTimeout(() => {
+                    window.location = "Quiz.html";
+                }, 1000)
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar inserir comentário!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                   
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+    }
 
 
 </script>

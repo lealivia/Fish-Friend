@@ -154,11 +154,46 @@ function gravarPontuacao(req, res) {
     }
 }
 
+function enviar(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo Quiz1.html
+    
+    var dataAtual= req.body.dataAtual;
+    var idUsuario = req.params.idUsuario;
+    var comentario = req.body.comentarioServer;
+
+    // Faça as validações dos valores
+     if (idUsuario == undefined) {
+        res.status(400).send("Seu fkUsuario está undefined!");
+    }else if (comentario == undefined) {
+        res.status(400).send("Seu comentario está undefined!");
+    }else if (dataAtual == undefined) {
+        res.status(400).send("Sua dataAtual está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.enviar( dataAtual, idUsuario,  comentario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o feedback! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
     gravarPontuacao,
-    obterAcertos
+    obterAcertos,
+    enviar
 }

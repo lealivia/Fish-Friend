@@ -35,7 +35,6 @@
         <div class="info-Sobre">
           <h2>Fish Quiz</h2>
           <br />
-          <br />
           <p>
             Aqui você começa sua jornada de descobrimento! E por que não tornar
             isso mais interessante? <br />
@@ -146,12 +145,12 @@
 
   function plotarGrafico(resposta) {
     const ctx = document.getElementById("myChart");
-
+    console.log("response", resposta);
     const data = [];
     for (let i = 0; i < resposta.length; i++) {
       data.push(resposta[i].acerto);
     }
-
+    console.log("data", data);
     new Chart(ctx, {
       type: "bar",
       data: {

@@ -23,6 +23,10 @@ router.post("/gravarPontuacao", function (req, res) {
     usuarioController.gravarPontuacao(req, res);
 })
 
+router.post("/enviar/:idUsuario", function (req, res) {
+    usuarioController.enviar(req, res);
+})
+
 
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
