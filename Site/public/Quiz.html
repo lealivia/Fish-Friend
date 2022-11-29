@@ -48,7 +48,8 @@
         </div>
         <div class="container-rank">
           <div class="ranking">
-            <div>
+            <h2>Ranking oceânico</h2>
+            <div id="grafico">
               <canvas id="myChart"></canvas>
             </div>
             <!--<h2>Ranking oceânico</h2>
@@ -78,31 +79,31 @@
             <h2>Legendas - Meça seu conhecimento</h2>
 
             <li>
-              <a>Zona Hadopelágica:</a>A camada mais profunda do mar,
+              <a>Zona Hadopelágica: <br> (9 a 10 pontos)</a>A camada mais profunda do mar,
               compreeendida entre os 6.000m de profundidade
             </li>
             <br />
 
             <li>
-              <a>Zona Abissopelágica:</a> A camada anterior a Hadal
+              <a>Zona Abissopelágica: <br> (7 a 8 pontos)</a> A camada anterior a Hadal
               compreeendida entre os 4.000 m de profundidade
             </li>
             <br />
 
             <li>
-              <a>Zona Batipelágica:</a> Se estende da profundidade de 1000m a
+              <a>Zona Batipelágica: <br> (5 a 6 pontos)</a> Se estende da profundidade de 1000m a
               4000m abaixo da superfície do oceano.
             </li>
             <br />
 
             <li>
-              <a>Zona Mesopelágica:</a> Se estende dos 200 aos 1.000 metros de
+              <a>Zona Mesopelágica: <br> (4 a 3 pontos)</a> Se estende dos 200 aos 1.000 metros de
               profundidade abaixo da superfície do oceano
             </li>
             <br />
 
             <li>
-              <a>Zona Epipelágica ou Superficial:</a> Vai até 200 m de
+              <a>Zona Epipelágica ou Superficial: <br> (2 a 1 pontos)</a> Vai até 200 m de
               profundidade e inclui a porção do mar onde pelo menos 1% da luz
               solar consegue penetrar,permitindo a fotossíntese.
             </li>
@@ -120,6 +121,7 @@
   </body>
 </html>
 <script>
+
   var idUsuario = sessionStorage.ID_USUARIO;
   var acertos = sessionStorage.QUANTIDADE_ACERTOS;
   var erros = sessionStorage.QUANTIDADE_ERROS;
@@ -130,6 +132,7 @@
       .then(function (response) {
         if (response.ok) {
           response.json().then(function (resposta) {
+            limparDiv()
             plotarGrafico(resposta);
           });
         } else {
@@ -143,13 +146,24 @@
       });
   }
 
+  
+
+
   function plotarGrafico(resposta) {
+    var canvas = document.createElement("canvas");
+    var div_grafico = document.getElementById("grafico");
+    canvas.id = "myChart"
+    div_grafico.appendChild(canvas);
+
     const ctx = document.getElementById("myChart");
     console.log("response", resposta);
     const data = [];
+ 
     for (let i = 0; i < resposta.length; i++) {
       data.push(resposta[i].acerto);
+     
     }
+
     console.log("data", data);
     new Chart(ctx, {
       type: "bar",
@@ -157,7 +171,7 @@
         labels: data,
         datasets: [
           {
-            label: "Ranking oceânico",
+            label: "Acertos",
             data: data,
             borderWidth: 1,
             backgroundColor: "#f47b2a",
@@ -186,4 +200,12 @@
     Chart.defaults.font.size = 18;
     Chart.defaults.color = "#ffffff";
   }
+
+  function limparDiv(){
+    var div_grafico = document.getElementById('grafico')
+
+    div_grafico.innerHTML=""
+  }
+
+
 </script>

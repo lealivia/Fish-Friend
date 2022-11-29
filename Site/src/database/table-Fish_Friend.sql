@@ -37,6 +37,8 @@ select*from tentativa;
 insert into usuario values
 (null, 'teste', 'teste@gmail.com', 123);
 
+truncate feedback;
+
 insert into feedback values
 (null, '2022-08-12', 10);
 
@@ -54,4 +56,4 @@ WHERE
     
     
 
-select usuario.idUsuario, tentativa.acertos, tentativa.erros from Quiz join usuario on fkUsuario = idUsuario;
+select usuario.idUsuario, tentativa.acertos from tentativa join usuario on fkUsuario = idUsuario where usuario.idUsuario = 10 order by tentativa.acertos desc limit 7 ;

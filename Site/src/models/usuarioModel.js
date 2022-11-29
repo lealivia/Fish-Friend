@@ -16,15 +16,12 @@ function obterAcertos(idUsuario) {
     "ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function obterAcertos()"
   );
   var instrucao = `
-        SELECT 
-         tentativa.acertos as acerto
-        FROM
-        tentativa
-            JOIN
-        usuario ON fkUsuario = idUsuario
-        WHERE
-        idUsuario = ${idUsuario};
-    `;
+    SELECT
+    tentativa.acertos as acerto
+    FROM 
+    tentativa JOIN usuario ON fkUsuario = idUsuario
+     WHERE usuario.idUsuario = ${idUsuario} 
+     ORDER BY tentativa.acertos DESC LIMIT 7 `;
 
   console.log("Executando a instrução SQL: \n" + instrucao);
   return database.executar(instrucao);
