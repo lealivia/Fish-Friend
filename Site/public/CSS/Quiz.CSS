@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Poppins;
 }
 
 body::-webkit-scrollbar {
@@ -120,27 +121,69 @@ body {
   padding: 21px;
 }
 
-.info-Sobre h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  margin-top: 10px;
+.perfil{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-.info-Sobre p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  text-align: center;
-  font-size: 23px;
+.perfil img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
 }
+
+.perfil p{
+  text-align: center;
+  width: 80%;
+  font-size: 1.5rem;
+}
+
+.info-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.info-text p{
+  line-height: 30px;
+  width: 90%;
+  font-size: 1.5rem;
+}
+
 
 .info-Sobre a {
   text-decoration: none;
   color: #ffff;
 }
 
+.info-Sobre p {
+  text-decoration: none;
+  color: #ffff;
+  font-size: 1.5rem;
+}
+
 a:hover {
   color: #f47b2a;
 }
+
+.container_imagem{
+  border-radius: 10px;
+  display: flex;
+  width: 0;
+}
+
+.container_imagem img{
+  width: 100px;
+  border-radius: 10px;
+}
+
 
 /*GRÁFICO RANKING OCEANICO PÁGINA QUIZ*/
 .container-rank {
@@ -178,37 +221,7 @@ p {
   margin-left: 25px;
 }
 
-/*.p1{
-  width: 800px;
-  margin-left: 25px;
-  background-color: #f47b2a;
-}
-
-.p2{
-  width: 600px;
-  margin-left: 25px;
-  background-color: #f47b2a;
-}
-
-.p3{
-  width: 500px;
-  margin-left: 25px;
-  background-color: #f47b2a;
-}
-
-.p4{
-  width: 300px;
-  margin-left: 25px;
-  background-color: #f47b2a;
-}
-
-.p5{
-  width: 150px;
-  margin-left: 25px;
-  background-color: #f47b2a;
-}*/
-
-.lengendas {
+.legendas {
   display: flex;
   background-color: #79d3f67a;
   flex-direction: column;
@@ -217,12 +230,12 @@ p {
   width: 1000px;
 }
 
-.lengendas h2 {
+.legendas h2 {
   color: #fff;
   margin-bottom: 20px;
 }
 
-.lengendas li {
+.legendas li {
   margin-left: 8px;
   margin-right: 10px;
   color: #ffff;
@@ -231,7 +244,7 @@ p {
   text-align: justify;
 }
 
-.lengendas a {
+.legendas a {
   margin-right: 40px;
   text-align: start;
   color: #fff;
@@ -269,44 +282,6 @@ p {
   font-weight: 400;
   margin-top: 27px;
 }
-
-
-/*
-.caixa2 {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 872px;
-  margin-top: 35px;
-}
-
-.caixa2 img{
-  border-radius: 10px;
-}
-
-.caixa2 h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-}
-
-.caixa3 {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 872px;
-  margin-top: 35px;
-}
-
-.caixa3 img{
-  border-radius: 10px;
-}
-
-.caixa3 h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-}*/
 
 .container-button {
   display: flex;

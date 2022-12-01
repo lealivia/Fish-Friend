@@ -75,6 +75,7 @@ color: #ffff;
   cursor: pointer;
 }
 
+
 li :hover {
   color: #f47b2a;
 }
@@ -219,12 +220,11 @@ li :hover {
 }
 
 
-.loading-div {
+.loadingdiv {
   position: absolute;
   top: 695px;
   width: 50px;
   margin: auto;
-  display: block;
 }
 
 .loading-div img {

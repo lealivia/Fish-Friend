@@ -75,13 +75,13 @@ body{
     justify-content: space-evenly;
     list-style: none;
     color: #ffff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 
   .navbar ul li {
     font-size: 20px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
   }
   
@@ -123,6 +123,13 @@ body{
 
   
 /*PÁGINA INDEX */
+.info-Home{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .info-Home h2{
   display: flex;
   flex-direction: column;
@@ -138,7 +145,13 @@ color: #f47b2a;
 }
 
 .info-Home p{
-  text-align: justify;
+  padding: 25px;
+  width: 80%;
+  text-align: center;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*CARROUSSE*/
@@ -238,7 +251,6 @@ color: #f47b2a;
   
   .container p{
     color: #ffff;
-    font-size: 23px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
   }

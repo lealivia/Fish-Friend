@@ -51,8 +51,8 @@
               <div id="exibir"></div>
 
               <button onclick="cadastrar()">Cadastrar</button> <br>
-              <div id="div_aguardar" class="loading-div">
-                <img src="./Assets/giphy.gif" width="70" height="70"  id="loading-gif" style="border-radius:300px;"></img>
+              <div id="div_aguardar" class="loadingdiv" >
+                <img src="./Assets/giphy.gif" width="60" height="60"  id="loadinggif"  style="border-radius:300px;"  ></img>
             </div>
             </div>
             <div class="imagem_formulario">
@@ -85,7 +85,7 @@
         var confirmacaoSenhaVar = in_confirmacao.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
+        
 
             finalizarAguardar();
             return false;
@@ -110,11 +110,10 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-
-                setTimeout(() => {
+            
+            setTimeout(() => {
                     window.location = "login.html";
-                }, "2000")
-                
+                }, 500)
                 limparFormulario();
                 finalizarAguardar();
             } else {
