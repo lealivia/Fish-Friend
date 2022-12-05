@@ -164,9 +164,9 @@ body {
 }
 
 .info-Sobre p {
-  text-decoration: none;
   color: #ffff;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 a:hover {
@@ -307,16 +307,6 @@ button {
   font-weight: bold;
 }
 
-/*.caixa img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5%;
-  border-radius: 6px;
-}
-
-ACHAR ESSA CLASS
-*/
 .caixa .exibir{
   background-color: #4a97b681;
   border-radius:10px;

@@ -54,6 +54,7 @@ FROM
 WHERE
     idUsuario = 10; 
     
-    
+
 
 select usuario.idUsuario, tentativa.acertos from tentativa join usuario on fkUsuario = idUsuario where usuario.idUsuario = 10 order by tentativa.acertos desc limit 7 ;
+
